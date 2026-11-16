@@ -682,7 +682,7 @@
         </div>
     </section>
 
-    <!-- SECTION 6: CITIZENS PARTICIPATION, VISITOR COMMENTS & STAR RATINGS (تعليقات وتقييمات الزوار بالنجوم) -->
+    <!-- SECTION 6: CITIZENS PARTICIPATION, VISITOR COMMENTS & STAR RATINGS (Connected to Cloudflare D1 Database) -->
     <section id="citizen-reviews" class="py-20 bg-gradient-to-b from-slate-100 to-white border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12">
@@ -707,7 +707,7 @@
                             <div>
                                 <span class="block text-xs font-bold text-amber-300 uppercase" data-i18n="rev_avg_label">مؤشر رضا الزوار</span>
                                 <div class="flex items-baseline gap-2 mt-1">
-                                    <span id="avgRatingScore" class="text-4xl sm:text-5xl font-black text-white">4.8</span>
+                                    <span id="avgRatingScore" class="text-4xl sm:text-5xl font-black text-white">0.0</span>
                                     <span class="text-sm text-amber-300 font-bold">/ 5</span>
                                 </div>
                                 <div class="flex items-center gap-1 text-amber-400 text-sm mt-1.5" id="avgStarsIcons">
@@ -719,7 +719,7 @@
                                 </div>
                             </div>
                             <div class="text-end">
-                                <span id="totalReviewsCount" class="block text-3xl font-black text-amber-400">6</span>
+                                <span id="totalReviewsCount" class="block text-3xl font-black text-amber-400">0</span>
                                 <span class="text-xs text-slate-300 font-bold" data-i18n="rev_total_participants">تعليق ومشاركة</span>
                             </div>
                         </div>
@@ -767,7 +767,7 @@
                                 <textarea id="reviewerComment" rows="3" required class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 focus:border-emerald-600 outline-none text-sm" placeholder="اكتب تعليقك بكل حرية حول البرنامج..."></textarea>
                             </div>
 
-                            <button type="submit" class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-sm shadow-md transition flex items-center justify-center gap-2 cursor-pointer">
+                            <button type="submit" id="submitReviewBtn" class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-sm shadow-md transition flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50">
                                 <i class="fa-solid fa-star"></i>
                                 <span data-i18n="rev_btn_post">نشر التعليق والتقييم</span>
                             </button>
@@ -798,7 +798,7 @@
                     </div>
 
                     <div id="citizenReviewsFeed" class="space-y-4 max-h-[680px] overflow-y-auto pe-1">
-                        <!-- Populated dynamically via JS -->
+                        <!-- Populated dynamically via Cloudflare D1 API -->
                     </div>
                 </div>
             </div>
@@ -995,10 +995,11 @@
     <!-- Hidden Input for Reliable Clipboard Copy -->
     <input type="text" id="hiddenUrlInput" class="sr-only" aria-hidden="true">
 
-    <!-- Bilingual Dictionary & Interactive Logic -->
+    <!-- Bilingual Dictionary & Interactive Logic (Connected to Cloudflare D1) -->
     <script>
         let currentLang = 'ar';
         let selectedStars = 5;
+        let allReviews = [];
 
         // Multi-source fallback for Candidate Photo to ensure 100% visibility
         let imgAttempt = 0;
@@ -1108,89 +1109,31 @@
             1: { ar: '1 نجمة: غير مقتنع', fr: '1 étoile : Non convaincu', badgeClass: 'bg-red-100 text-red-900' }
         };
 
-        // Initial Realistic Visitor Comments from Annaba
-        const defaultCitizenReviews = [
-            {
-                id: 1,
-                name: 'عبد الرحمان ب.',
-                area: 'عنابة وسط / Annaba Centre',
-                stars: 5,
-                commentAr: 'برنامج واقعي جداً خاصة في جانب تهيئة الطرقات وفك الاختناق المروري بوسط المدينة، كل التوفيق للأخ لعبيدي لمين في اللائحة 1 والمترشح 27.',
-                commentFr: 'Programme très réaliste, notamment sur la voirie et la fluidité du trafic au centre-ville. Bon courage à Lamine Labidi (Liste 1 - Candidat 27).',
-                dateAr: 'منذ ساعتين',
-                dateFr: 'Il y a 2 heures'
-            },
-            {
-                id: 2,
-                name: 'سهام م.',
-                area: 'البوني / El Bouni',
-                stars: 5,
-                commentAr: 'أعجبني كثيراً التركيز على المدارس الابتدائية والتدفئة والإطعام المدرسي، وكذلك رقمنة الإدارة البلدية لتسهيل الوثائق على المواطنين.',
-                commentFr: 'J’apprécie particulièrement la priorité donnée aux écoles primaires et à la numérisation des services communaux.',
-                dateAr: 'منذ 5 ساعات',
-                dateFr: 'Il y a 5 heures'
-            },
-            {
-                id: 3,
-                name: 'طارق ز.',
-                area: 'سيدي عمار / Sidi Amar',
-                stars: 4,
-                commentAr: 'مقترحات ممتازة لدعم الشباب والملاعب الجوارية، نأمل متابعة ميدانية مستمرة بعد الانتخابات في كل أحياء سيدي عمار.',
-                commentFr: 'Excellentes propositions pour les jeunes et les stades de proximité. Nous espérons un suivi rigoureux à Sidi Amar.',
-                dateAr: 'أمس',
-                dateFr: 'Hier'
-            },
-            {
-                id: 4,
-                name: 'نادية ك.',
-                area: 'سرايدي / Seraïdi',
-                stars: 5,
-                commentAr: 'تثمين السياحة العائلية في سرايدي وشطايبي وحماية الغابات من أولوياتنا، معكم قلباً وقالباً.',
-                commentFr: 'La valorisation du tourisme familial à Seraïdi et Chetaïbi ainsi que la protection des forêts sont essentielles.',
-                dateAr: 'منذ يومين',
-                dateFr: 'Il y a 2 jours'
-            },
-            {
-                id: 5,
-                name: 'يوسف ح.',
-                area: 'الحجار / El Hadjar',
-                stars: 3,
-                commentAr: 'نقاط مهمة في البرنامج، نريد تركيزاً أكبر على النقل الجامعي والربط بين الحجار ووسط عنابة.',
-                commentFr: 'Points importants dans le programme, nous souhaitons un focus renforcé sur le transport entre El Hadjar et le centre.',
-                dateAr: 'منذ 3 أيام',
-                dateFr: 'Il y a 3 jours'
-            },
-            {
-                id: 6,
-                name: 'سمير د.',
-                area: 'برحال / Berrahal',
-                stars: 5,
-                commentAr: 'الاستناد إلى مواد قانون البلدية يثبت أن العمل مدروس وليس مجرد وعود. بالتوفيق إن شاء الله.',
-                commentFr: 'S’appuyer sur les articles de la loi communale prouve le sérieux de la démarche. Plein succès.',
-                dateAr: 'منذ 4 أيام',
-                dateFr: 'Il y a 4 jours'
+        // Load real shared reviews from Cloudflare D1 API (/api/reviews)
+        async function fetchReviewsFromDB() {
+            const feed = document.getElementById('citizenReviewsFeed');
+            if (feed && allReviews.length === 0) {
+                feed.innerHTML = `<div class="p-8 text-center text-slate-500 text-sm font-bold"><i class="fa-solid fa-spinner fa-spin text-emerald-700 me-2"></i>${currentLang === 'ar' ? 'جاري تحميل تعليقات الزوار...' : 'Chargement des commentaires...'}</div>`;
             }
-        ];
 
-        function getStoredReviews() {
             try {
-                const saved = localStorage.getItem('annaba_lamine_reviews_v2');
-                if (saved) {
-                    const parsed = JSON.parse(saved);
-                    if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+                const res = await fetch('/api/reviews');
+                if (!res.ok) throw new Error('API Error');
+                const data = await res.json();
+                if (Array.isArray(data.reviews)) {
+                    allReviews = data.reviews.map(r => ({
+                        id: r.id,
+                        name: r.name,
+                        area: r.city || (currentLang === 'ar' ? 'عنابة' : 'Annaba'),
+                        stars: Math.min(5, Math.max(1, Number(r.rating) || 5)),
+                        comment: r.comment,
+                        date: r.created_at ? r.created_at.split(' ')[0] : (currentLang === 'ar' ? 'الآن' : 'À l’instant')
+                    }));
                 }
-            } catch (e) {
-                console.warn('LocalStorage unavailable', e);
+            } catch (err) {
+                console.error('Error fetching reviews from D1:', err);
             }
-            return defaultCitizenReviews;
-        }
-
-        function saveReviews(reviews) {
-            try {
-                localStorage.setItem('annaba_lamine_reviews_v2', JSON.stringify(reviews));
-            } catch (e) {
-                console.warn('Could not save review to LocalStorage', e);
-            }
+            renderCitizenReviews();
         }
 
         const translations = {
@@ -1552,14 +1495,14 @@
             updateStarVisuals(selectedStars);
         }
 
-        // Render Visitor Comments & Rating Breakdown
+        // Render Visitor Comments & Rating Breakdown from D1
         function renderCitizenReviews() {
-            const reviews = getStoredReviews();
+            const reviews = allReviews;
             const filterVal = document.getElementById('reviewFilterSelect')?.value || 'all';
 
             const total = reviews.length;
             const sum = reviews.reduce((acc, r) => acc + Number(r.stars || 5), 0);
-            const avg = total > 0 ? (sum / total).toFixed(1) : '5.0';
+            const avg = total > 0 ? (sum / total).toFixed(1) : '0.0';
 
             document.getElementById('avgRatingScore').textContent = avg;
             document.getElementById('totalReviewsCount').textContent = total;
@@ -1590,19 +1533,17 @@
                 : reviews.filter(r => String(r.stars) === filterVal);
 
             const feed = document.getElementById('citizenReviewsFeed');
+            if (visibleReviews.length === 0) {
+                feed.innerHTML = `<div class="bg-white rounded-2xl p-8 text-center border border-slate-200 text-slate-500 text-sm font-bold">${currentLang === 'ar' ? 'لا توجد تعليقات مطابقة حالياً. كن أول من يشارك برأيه وتقييمه!' : 'Aucun commentaire pour le moment. Soyez le premier à donner votre avis !'}</div>`;
+                return;
+            }
+
             feed.innerHTML = visibleReviews.map(rev => {
                 const sCount = Number(rev.stars || 5);
                 const labelInfo = starRatingLabels[sCount] || starRatingLabels[5];
                 const starsHtml = Array.from({ length: 5 }, (_, i) =>
                     `<i class="fa-solid fa-star ${i < sCount ? 'text-amber-400' : 'text-slate-200'}"></i>`
                 ).join('');
-
-                const commentText = currentLang === 'ar'
-                    ? (rev.commentAr || rev.commentFr)
-                    : (rev.commentFr || rev.commentAr);
-                const dateText = currentLang === 'ar'
-                    ? (rev.dateAr || 'الآن')
-                    : (rev.dateFr || 'À l’instant');
 
                 return `
                     <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-slate-200/80 hover:border-emerald-500/50 transition">
@@ -1615,7 +1556,7 @@
                                     <h4 class="font-extrabold text-sm text-slate-900">${rev.name}</h4>
                                     <span class="text-xs text-slate-500 font-semibold flex items-center gap-1">
                                         <i class="fa-solid fa-location-dot text-emerald-700"></i>
-                                        ${rev.area} • ${dateText}
+                                        ${rev.area} • ${rev.date}
                                     </span>
                                 </div>
                             </div>
@@ -1626,47 +1567,59 @@
                                 </span>
                             </div>
                         </div>
-                        <p class="text-sm text-slate-700 leading-relaxed">${commentText}</p>
+                        <p class="text-sm text-slate-700 leading-relaxed">${rev.comment}</p>
                     </div>
                 `;
             }).join('');
         }
 
-        function handleStarReviewSubmit(e) {
+        async function handleStarReviewSubmit(e) {
             e.preventDefault();
-            const name = document.getElementById('reviewerName').value.trim();
-            const area = document.getElementById('reviewerArea').value.trim();
-            const comment = document.getElementById('reviewerComment').value.trim();
+            const nameInput = document.getElementById('reviewerName');
+            const areaInput = document.getElementById('reviewerArea');
+            const commentInput = document.getElementById('reviewerComment');
+            const submitBtn = document.getElementById('submitReviewBtn');
+
+            const name = nameInput.value.trim();
+            const area = areaInput.value.trim();
+            const comment = commentInput.value.trim();
             const stars = parseInt(document.getElementById('selectedRatingValue').value, 10) || 5;
 
             if (!name || !area || !comment) return;
 
-            const reviews = getStoredReviews();
-            reviews.unshift({
-                id: Date.now(),
-                name,
-                area,
-                stars,
-                commentAr: comment,
-                commentFr: comment,
-                dateAr: 'الآن',
-                dateFr: 'À l’instant'
-            });
+            if (submitBtn) submitBtn.disabled = true;
 
-            saveReviews(reviews);
-            renderCitizenReviews();
+            try {
+                const res = await fetch('/api/reviews', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name,
+                        city: area,
+                        rating: stars,
+                        comment
+                    })
+                });
 
-            e.target.reset();
-            selectStarRating(5);
+                if (res.ok) {
+                    e.target.reset();
+                    selectStarRating(5);
+                    await fetchReviewsFromDB();
 
-            const toast = document.getElementById('reviewToast');
-            const toastText = document.getElementById('reviewToastText');
-            toastText.textContent = currentLang === 'ar'
-                ? 'تم نشر تعليقك وتقييمك بنجاح في قائمة الزوار!'
-                : 'Votre commentaire et votre note ont été publiés avec succès !';
-            toast.classList.remove('hidden');
+                    const toast = document.getElementById('reviewToast');
+                    const toastText = document.getElementById('reviewToastText');
+                    toastText.textContent = currentLang === 'ar'
+                        ? 'تم نشر تعليقك وتقييمك بنجاح في قائمة الزوار!'
+                        : 'Votre commentaire et votre note ont été publiés avec succès !';
+                    toast.classList.remove('hidden');
 
-            setTimeout(() => toast.classList.add('hidden'), 5000);
+                    setTimeout(() => toast.classList.add('hidden'), 5000);
+                }
+            } catch (err) {
+                console.error('Submit review failed:', err);
+            } finally {
+                if (submitBtn) submitBtn.disabled = false;
+            }
         }
 
         // Render 12 Communes of Annaba
@@ -1823,7 +1776,7 @@
             renderCommunes();
             renderLegalCards();
             updateStarVisuals(5);
-            renderCitizenReviews();
+            fetchReviewsFromDB();
             initGoldenParticles();
         });
     </script>
