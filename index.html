@@ -1,0 +1,1831 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لعبيدي لمين | الحملة الانتخابية - حزب جبهة التحرير الوطني - عنابة | اللائحة 1 - المترشح 27</title>
+    <meta name="description" content="الموقع الرسمي للحملة الانتخابية المحلية بولاية عنابة - المترشح لعبيدي لمين (Lamine Labidi) - حزب جبهة التحرير الوطني - رقم اللائحة 1 - رقم المترشح 27.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Cairo & Amiri for Arabic, Plus Jakarta Sans for French -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emeraldDeep: '#043927',
+                        emeraldRich: '#065f46',
+                        crimsonFlag: '#d21034',
+                        goldRoyal: '#d97706',
+                        goldLight: '#fbbf24',
+                        slateDark: '#0f172a'
+                    },
+                    fontFamily: {
+                        ar: ['Cairo', 'sans-serif'],
+                        arSerif: ['Amiri', 'serif'],
+                        fr: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Base Typography Switching */
+        html[lang="ar"] body { font-family: 'Cairo', sans-serif; }
+        html[lang="fr"] body { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+        /* Annaba City Smart Transparent Background Layer */
+        .annaba-bg-layer {
+            background-image: linear-gradient(to bottom, rgba(4, 57, 39, 0.86), rgba(15, 23, 42, 0.94)), 
+                              url('https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        @media (max-width: 768px) {
+            .annaba-bg-layer {
+                background-attachment: scroll;
+            }
+        }
+
+        .annaba-section-watermark {
+            position: relative;
+            overflow: hidden;
+        }
+        .annaba-section-watermark::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Glassmorphism Cards */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+        }
+
+        /* Waving Algerian Flag Animation */
+        @keyframes flagWave {
+            0% { transform: perspective(600px) rotateY(-5deg) skewY(0deg) scale(1.02); }
+            25% { transform: perspective(600px) rotateY(3deg) skewY(1deg) scale(1.04); }
+            50% { transform: perspective(600px) rotateY(-3deg) skewY(-0.8deg) scale(1.02); }
+            75% { transform: perspective(600px) rotateY(5deg) skewY(0.6deg) scale(1.04); }
+            100% { transform: perspective(600px) rotateY(-5deg) skewY(0deg) scale(1.02); }
+        }
+        .animate-flag-wave {
+            animation: flagWave 5.5s ease-in-out infinite;
+            transform-origin: left center;
+        }
+
+        /* FLN Emblem Subtle Floating & Pulse */
+        @keyframes emblemFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.4)); }
+            50% { transform: translateY(-4px) rotate(1.5deg) scale(1.04); filter: drop-shadow(0 0 20px rgba(251, 191, 36, 0.75)); }
+        }
+        .animate-emblem {
+            animation: emblemFloat 3.5s ease-in-out infinite;
+        }
+
+        /* Crisp Static High-Resolution Portrait Styling */
+        .candidate-hd-portrait {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: high-quality;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+        }
+
+        /* Live Broadcast Pulse Dot */
+        @keyframes livePing {
+            0% { transform: scale(0.95); opacity: 0.9; }
+            70% { transform: scale(2.1); opacity: 0; }
+            100% { transform: scale(2.1); opacity: 0; }
+        }
+        .live-dot::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 9999px;
+            background-color: #ef4444;
+            animation: livePing 1.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+
+        /* Gold Gradient Text */
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #fef08a 0%, #f59e0b 45%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Radiant Candidate Name Gold Shimmer */
+        .candidate-name-radiant {
+            background: linear-gradient(to right, #FDE68A 0%, #D4AF37 50%, #F59E0B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 2px 10px rgba(212, 175, 55, 0.45));
+        }
+
+        /* Fast & Dynamic Luxury Floating Golden Particles (Sparkles) */
+        @keyframes goldFastRise {
+            0% {
+                transform: translateY(30px) translateX(0px) scale(0.5);
+                opacity: 0;
+            }
+            15% {
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-110px) translateX(14px) scale(1.2);
+                opacity: 0.95;
+            }
+            85% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-240px) translateX(-12px) scale(0.7);
+                opacity: 0;
+            }
+        }
+        @keyframes goldFastTwinkle {
+            0%, 100% {
+                opacity: 0.35;
+                transform: scale(0.85);
+                box-shadow: 0 0 8px rgba(251, 191, 36, 0.7);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+                box-shadow: 0 0 18px rgba(254, 240, 138, 1), 0 0 32px rgba(245, 158, 11, 0.85);
+            }
+        }
+        .gold-particle {
+            position: absolute;
+            border-radius: 9999px;
+            background: radial-gradient(circle, #ffffff 0%, #fef08a 35%, #f59e0b 75%, transparent 100%);
+            pointer-events: none;
+            will-change: transform, opacity;
+            animation: goldFastRise var(--dur, 3.2s) linear infinite, goldFastTwinkle var(--twinkle, 1.1s) ease-in-out infinite;
+            animation-delay: var(--delay, 0s);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #065f46; border-radius: 9999px; }
+        ::-webkit-scrollbar-thumb:hover { background: #d97706; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-700 selection:text-white overflow-x-hidden">
+
+    <!-- Top Sticky Navigation Bar -->
+    <header class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-emeraldDeep/95 backdrop-blur-md border-b border-amber-400/25 shadow-lg">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                
+                <!-- Brand & Party Badge -->
+                <a href="#hero" class="flex items-center gap-2 sm:gap-3 group">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white p-1 shadow-md border-2 border-amber-400 flex items-center justify-center overflow-hidden shrink-0 group-hover:scale-105 transition">
+                        <!-- Party Emblem with SVG Fallback -->
+                        <img src="https://raw.githubusercontent.com/koreaone10-del/Lamine/main/fln-logo.png"
+                             onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+                             alt="شعار حزب جبهة التحرير الوطني"
+                             class="w-full h-full object-contain">
+                        <svg viewBox="0 0 100 100" class="hidden w-full h-full">
+                            <circle cx="50" cy="50" r="47" fill="#ffffff" stroke="#065f46" stroke-width="4"/>
+                            <circle cx="50" cy="50" r="36" fill="none" stroke="#d97706" stroke-width="1.5" stroke-dasharray="3 2"/>
+                            <path d="M50 18 L50 10 M32 23 L27 16 M68 23 L73 16 M22 36 L14 32 M78 36 L86 32" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M50 16 C44 26, 45 34, 50 38 C55 34, 56 26, 50 16 Z" fill="#d21034"/>
+                            <path d="M54 44 A11 11 0 1 0 54 62 A8.5 8.5 0 1 1 54 44 Z" fill="#d21034"/>
+                            <polygon points="56,50 57.5,53 61,53 58.2,55 59.2,58 56,56.2 52.8,58 53.8,55 51,53 54.5,53" fill="#d21034"/>
+                            <path d="M26 52 C26 68, 38 76, 48 78 L48 68 C40 66, 34 60, 34 50 Z" fill="#15803d"/>
+                            <path d="M74 52 C74 68, 62 76, 52 78 L52 68 C60 66, 66 60, 66 50 Z" fill="#15803d"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="block text-sm sm:text-lg font-black leading-tight bg-gradient-to-r from-[#FDE68A] via-[#D4AF37] to-[#F59E0B] bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(212,175,55,0.45)]" data-i18n="nav_candidate_name">لعبيدي لمين</span>
+                        <span class="block text-[10px] sm:text-xs font-bold tracking-wide text-emerald-200 leading-tight" data-i18n="nav_party">حزب جبهة التحرير الوطني • عنابة</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-5 text-sm font-bold text-slate-100">
+                    <a href="#hero" class="hover:text-amber-300 transition" data-i18n="nav_home">الرئيسية</a>
+                    <a href="#vision" class="hover:text-amber-300 transition" data-i18n="nav_vision">كلمة المترشح</a>
+                    <a href="#program" class="hover:text-amber-300 transition" data-i18n="nav_program">البرنامج الانتخابي</a>
+                    <a href="#legal-framework" class="hover:text-amber-300 transition" data-i18n="nav_legal">السند القانوني</a>
+                    <a href="#citizen-reviews" class="hover:text-amber-300 transition" data-i18n="nav_reviews">تعليقات الزوار</a>
+                    <a href="#participate" class="hover:text-amber-300 transition" data-i18n="nav_contact">مقترحاتكم</a>
+                </nav>
+
+                <!-- Right Controls: List/Candidate Pill + Language Switcher -->
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <div class="hidden sm:flex items-center gap-2 bg-white/10 border border-amber-400/40 px-3 py-1.5 rounded-full text-xs font-extrabold text-white">
+                        <span class="text-amber-300" data-i18n="badge_list_short">اللائحة: 1</span>
+                        <span class="text-white/40">|</span>
+                        <span class="text-emerald-300" data-i18n="badge_cand_short">المترشح: 27</span>
+                    </div>
+
+                    <!-- Bilingual Toggle Button -->
+                    <button id="langToggleBtn" onclick="toggleLanguage()" class="flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-extrabold text-xs sm:text-sm px-3.5 py-2 rounded-full shadow-md transition transform active:scale-95 cursor-pointer" aria-label="Switch Language">
+                        <i class="fa-solid fa-globe"></i>
+                        <span id="langBtnText">Français</span>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden text-white p-2 rounded-xl bg-white/10 hover:bg-white/20" aria-label="Menu">
+                        <i class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-emeraldDeep border-t border-white/10 px-4 pt-3 pb-5 space-y-2">
+            <a href="#hero" onclick="toggleMobileMenu()" class="block py-2.5 px-3 rounded-xl text-white font-bold hover:bg-white/10" data-i18n="nav_home">الرئيسية</a>
+            <a href="#vision" onclick="toggleMobileMenu()" class="block py-2.5 px-3 rounded-xl text-white font-bold hover:bg-white/10" data-i18n="nav_vision">كلمة المترشح</a>
+            <a href="#program" onclick="toggleMobileMenu()" class="block py-2.5 px-3 rounded-xl text-white font-bold hover:bg-white/10" data-i18n="nav_program">البرنامج الانتخابي</a>
+            <a href="#legal-framework" onclick="toggleMobileMenu()" class="block py-2.5 px-3 rounded-xl text-white font-bold hover:bg-white/10" data-i18n="nav_legal">السند القانوني</a>
+            <a href="#citizen-reviews" onclick="toggleMobileMenu()" class="block py-2.5 px-3 rounded-xl text-white font-bold hover:bg-white/10" data-i18n="nav_reviews">تعليقات الزوار</a>
+            <a href="#annaba-map" onclick="toggleMobileMenu()" class="block py-2.5 px-3 rounded-xl text-white font-bold hover:bg-white/10" data-i18n="nav_communes">بلديات عنابة</a>
+            <a href="#participate" onclick="toggleMobileMenu()" class="block py-2.5 px-3 rounded-xl text-white font-bold hover:bg-white/10" data-i18n="nav_contact">مقترحاتكم</a>
+            <div class="pt-2 flex items-center justify-center gap-3 border-t border-white/10 text-xs font-extrabold text-amber-300">
+                <span data-i18n="badge_list">رقم اللائحة: 1</span>
+                <span>•</span>
+                <span data-i18n="badge_cand">رقم المترشح: 27</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION: Elevated Large Candidate Portrait + Fast Golden Sparkles + Waving Algerian Flag -->
+    <section id="hero" class="relative pt-20 pb-14 sm:pt-24 sm:pb-16 lg:pt-24 lg:pb-20 annaba-bg-layer text-white flex items-center overflow-hidden">
+        
+        <!-- Subtle Golden Ambient Glow & Fast Animated Golden Particles Container -->
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(251,191,36,0.2),transparent_55%)] pointer-events-none"></div>
+        <div id="goldParticlesContainer" class="absolute inset-0 overflow-hidden pointer-events-none z-0" aria-hidden="true"></div>
+        <div class="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-slate-50 to-transparent pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+                
+                <!-- CANDIDATE PORTRAIT CARD (Large, Full-Proportion, Unobstructed, High-Resolution) -->
+                <div class="order-1 lg:order-2 lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-[390px] sm:max-w-[440px] lg:max-w-[460px] rounded-3xl p-3 sm:p-3.5 glass-panel border-2 border-amber-400/75 shadow-[0_25px_60px_rgba(0,0,0,0.65)]">
+                        
+                        <!-- Live Broadcast Status Header -->
+                        <div class="flex items-center justify-between px-3.5 py-2 mb-2.5 rounded-2xl bg-slate-950/85 border border-amber-400/35">
+                            <div class="flex items-center gap-2">
+                                <span class="relative flex h-2.5 w-2.5 live-dot">
+                                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-600"></span>
+                                </span>
+                                <span class="text-xs font-black tracking-wider text-white uppercase" data-i18n="live_badge">بث مباشر • الحملة الانتخابية</span>
+                            </div>
+                            <span class="text-[11px] font-bold text-amber-300 bg-amber-500/15 px-2.5 py-0.5 rounded-full border border-amber-400/30">ANNABA 23</span>
+                        </div>
+
+                        <!-- Clean Full-Height Portrait Frame (No Horizontal Line or Mid-Image Overlay) -->
+                        <div class="relative aspect-[3/4] min-h-[430px] sm:min-h-[490px] w-full rounded-2xl overflow-hidden bg-gradient-to-b from-emerald-950 to-slate-900 shadow-inner">
+                            
+                            <!-- 1. Waving Algerian Flag Backdrop -->
+                            <div class="absolute inset-0 overflow-hidden opacity-90 pointer-events-none">
+                                <div class="w-full h-full animate-flag-wave relative">
+                                    <svg viewBox="0 0 600 400" preserveAspectRatio="none" class="w-full h-full">
+                                        <rect x="0" y="0" width="300" height="400" fill="#006633"/>
+                                        <rect x="300" y="0" width="300" height="400" fill="#ffffff"/>
+                                        <path d="M 342 128 A 82 82 0 1 0 342 272 A 65 65 0 1 1 342 128 Z" fill="#d21034"/>
+                                        <polygon points="355,172 364,193 387,195 369,209 375,231 355,219 335,231 341,209 323,195 346,193" fill="#d21034"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- 2. Floating Animated FLN Party Emblem (Top Right Corner) -->
+                            <div class="absolute top-3 right-3 z-20 w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white p-1.5 shadow-xl border-2 border-amber-400 animate-emblem flex items-center justify-center overflow-hidden">
+                                <img src="https://raw.githubusercontent.com/koreaone10-del/Lamine/main/fln-logo.png"
+                                     onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+                                     alt="شعار حزب جبهة التحرير الوطني"
+                                     class="w-full h-full object-contain">
+                                <svg viewBox="0 0 100 100" class="hidden w-full h-full">
+                                    <circle cx="50" cy="50" r="47" fill="#ffffff" stroke="#065f46" stroke-width="3.5"/>
+                                    <circle cx="50" cy="50" r="37" fill="none" stroke="#d97706" stroke-width="1.5" stroke-dasharray="3 2"/>
+                                    <path d="M50 17 L50 9 M32 22 L26 15 M68 22 L74 15 M21 35 L13 31 M79 35 L87 31" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
+                                    <path d="M50 15 C44 25, 45 33, 50 37 C55 33, 56 25, 50 15 Z" fill="#d21034"/>
+                                    <path d="M54 43 A11 11 0 1 0 54 61 A8.5 8.5 0 1 1 54 43 Z" fill="#d21034"/>
+                                    <polygon points="56,49 57.5,52 61,52 58.2,54 59.2,57 56,55.2 52.8,57 53.8,54 51,52 54.5,52" fill="#d21034"/>
+                                    <path d="M25 52 C25 68, 37 76, 48 78 L48 68 C40 66, 33 60, 34 50 Z" fill="#15803d"/>
+                                    <path d="M75 52 C75 68, 63 76, 52 78 L52 68 C60 66, 67 60, 67 50 Z" fill="#15803d"/>
+                                </svg>
+                            </div>
+
+                            <!-- 3. Crystal-Clear High-Definition Candidate Portrait with Multi-Source Fallback -->
+                            <div class="relative z-10 w-full h-full">
+                                <img id="candidatePhoto" 
+                                     src="https://raw.githubusercontent.com/koreaone10-del/Lamine/main/1794840743395.jpg" 
+                                     onerror="handleCandidateImgError(this)"
+                                     alt="المترشح لعبيدي لمين - رقم المترشح 27 - حزب جبهة التحرير الوطني عنابة" 
+                                     loading="eager"
+                                     decoding="sync"
+                                     class="candidate-hd-portrait w-full h-full object-cover object-top select-none">
+                            </div>
+                        </div>
+
+                        <!-- 4. Radiant Candidate Identity Banner Below Portrait (Full Unclipped Name) -->
+                        <div class="mt-2.5 rounded-2xl bg-emeraldDeep/95 border border-amber-400/70 p-3.5 sm:p-4 shadow-xl">
+                            <div class="flex flex-wrap items-center justify-between gap-2.5">
+                                <div class="flex-1 min-w-[165px]">
+                                    <span class="block text-xl sm:text-2xl font-black leading-snug bg-gradient-to-r from-[#FDE68A] via-[#D4AF37] to-[#F59E0B] bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(212,175,55,0.45)]" data-i18n="card_candidate_name">لعبيدي لمين</span>
+                                    <span class="block text-[11px] sm:text-xs font-bold text-emerald-200 mt-0.5 leading-snug" data-i18n="card_role">مترشح حزب جبهة التحرير الوطني • عنابة</span>
+                                </div>
+                                <div class="flex items-center gap-2 shrink-0">
+                                    <div class="bg-amber-500 text-slate-950 px-2.5 py-1 rounded-xl text-center font-black shadow">
+                                        <span class="block text-[9px] leading-none" data-i18n="mini_list">اللائحة</span>
+                                        <span class="text-base leading-tight">1</span>
+                                    </div>
+                                    <div class="bg-white text-emeraldDeep px-2.5 py-1 rounded-xl text-center font-black shadow">
+                                        <span class="block text-[9px] leading-none" data-i18n="mini_cand">المترشح</span>
+                                        <span class="text-base leading-tight">27</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Text & Campaign Identity Column -->
+                <div class="order-2 lg:order-1 lg:col-span-7 space-y-5 text-center lg:text-start">
+                    
+                    <!-- Top Official Pill -->
+                    <div class="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2 px-4 py-1.5 rounded-full glass-panel border border-amber-400/45 shadow-lg">
+                        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                        <span class="text-xs sm:text-sm font-extrabold text-amber-300 tracking-wide" data-i18n="hero_election_tag">الانتخابات المحلية • بلدية وولاية عنابة (بونة)</span>
+                    </div>
+
+                    <!-- Radiant Candidate Name & Party Slogan -->
+                    <div class="space-y-2.5">
+                        <div class="inline-block">
+                            <span class="block text-xs sm:text-sm font-extrabold text-emerald-300 tracking-wider uppercase mb-1" data-i18n="hero_party_full">
+                                حزب جبهة التحرير الوطني • عنابة
+                            </span>
+                            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight bg-gradient-to-r from-[#FDE68A] via-[#D4AF37] to-[#F59E0B] bg-clip-text text-transparent drop-shadow-[0_2px_12px_rgba(212,175,55,0.5)]" data-i18n="hero_candidate_name">
+                                المترشح لعبيدي لمين
+                            </h2>
+                        </div>
+                        <h1 class="text-2xl sm:text-4xl lg:text-5xl font-black leading-tight tracking-tight pt-1">
+                            <span class="block text-white" data-i18n="hero_headline_1">الإصلاح المحوري</span>
+                            <span class="block text-gold-gradient mt-1" data-i18n="hero_headline_2">والتنمية الشاملة لعنابة</span>
+                        </h1>
+                    </div>
+
+                    <p class="text-sm sm:text-lg text-slate-200 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium" data-i18n="hero_subtitle">
+                        رؤية ميدانية متكاملة ترتكز على القرب الحقيقي من المواطن، تحديث البنية التحتية والأحياء، رقمنة الإدارة الجوارية، دعم الشباب والمؤسسات الناشئة، والارتقاء بالنظافة والبيئة في جوهرة الشرق الجزائري.
+                    </p>
+
+                    <!-- Official Ballot Numbers Highlight Cards (List 1 & Candidate 27) -->
+                    <div class="grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-1">
+                        <div class="glass-panel rounded-2xl px-6 py-4 border-2 border-amber-400/70 shadow-xl text-center min-w-[145px] sm:min-w-[165px] transform hover:-translate-y-1 transition">
+                            <span class="block text-xs sm:text-sm font-bold text-amber-200 uppercase" data-i18n="label_list_num">رقم اللائحة</span>
+                            <span class="block text-4xl sm:text-5xl font-black text-white mt-0.5">1</span>
+                        </div>
+
+                        <div class="glass-panel rounded-2xl px-6 py-4 border-2 border-emerald-400/70 shadow-xl text-center min-w-[145px] sm:min-w-[165px] transform hover:-translate-y-1 transition">
+                            <span class="block text-xs sm:text-sm font-bold text-emerald-200 uppercase" data-i18n="label_cand_num">رقم المترشح</span>
+                            <span class="block text-4xl sm:text-5xl font-black text-amber-400 mt-0.5">27</span>
+                        </div>
+                    </div>
+
+                    <!-- Primary Action Buttons -->
+                    <div class="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
+                        <a href="#program" class="px-6 py-3.5 sm:px-7 sm:py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-sm sm:text-base shadow-xl shadow-amber-500/25 flex items-center justify-center gap-2.5 transition transform hover:-translate-y-0.5">
+                            <i class="fa-solid fa-file-signature"></i>
+                            <span data-i18n="cta_program">اكتشف البرنامج الانتخابي الكامل</span>
+                        </a>
+                        <a href="#citizen-reviews" class="px-6 py-3.5 sm:px-7 sm:py-4 rounded-2xl glass-panel hover:bg-white/15 text-white font-bold text-sm sm:text-base border border-white/30 flex items-center justify-center gap-2.5 transition">
+                            <i class="fa-solid fa-star text-amber-400"></i>
+                            <span data-i18n="cta_reviews">شاهد وشارك رأيك بالنجوم</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: CANDIDATE MESSAGE & COMMITMENT (كلمة المترشح والتزامه الميداني) -->
+    <section id="vision" class="py-16 sm:py-20 bg-slate-50 annaba-section-watermark border-b border-slate-200">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                <div class="lg:col-span-7 space-y-5">
+                    <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-900 font-extrabold text-xs uppercase tracking-wider">
+                        <i class="fa-solid fa-handshake-angle text-amber-600"></i>
+                        <span data-i18n="vision_tag">كلمة المترشح والتزامه الميداني</span>
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-slate-900 leading-tight" data-i18n="vision_title">
+                        معاً من أجل عنابة تليق بتاريخها وطموح شبابها
+                    </h2>
+                    <blockquote class="p-5 sm:p-6 rounded-2xl bg-white border-s-4 border-amber-500 shadow-sm text-slate-700 text-sm sm:text-base leading-relaxed font-semibold" data-i18n="vision_quote_1">
+                        "أهلي وإخواني في ولاية عنابة العريقة، أنا أخوكم لعبيدي لمين، إن ترشحي ضمن قائمة حزب جبهة التحرير الوطني (اللائحة رقم 1 - المترشح رقم 27) ينبع من قناعة راسخة بأن العمل المحلي هو أساس التنمية الحقيقية التي يلمسها المواطن في حياته اليومية، بعيداً عن الوعود الجوفاء."
+                    </blockquote>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed" data-i18n="vision_quote_2">
+                        نلتزم أن نكون صوتكم الصادق داخل المجلس المنتخب، وأن نعمل بشفافية وصرامة لمتابعة المشاريع التنموية في كل حي، تحديث الإدارة البلدية بالرقمنة، تحسين الإطار المعيشي، دعم المبادرات الشبانية والرياضية، وإعادة البريق السياحي والاقتصادي لجوهرة الشرق الجزائري.
+                    </p>
+                    <div class="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-slate-200">
+                        <div>
+                            <span class="block font-black text-emeraldDeep text-lg sm:text-xl" data-i18n="vision_sig_party">لعبيدي لمين • حزب جبهة التحرير الوطني</span>
+                            <span class="block text-xs font-bold text-amber-700" data-i18n="vision_sig_sub">اللائحة رقم 1 • المترشح رقم 27 • عنابة</span>
+                        </div>
+                        <span class="px-4 py-2 rounded-xl bg-emeraldDeep text-amber-300 font-extrabold text-xs" data-i18n="vision_pledge">عهد الوفاء والعمل الميداني</span>
+                    </div>
+                </div>
+
+                <!-- 3 Core Governance Pillars -->
+                <div class="lg:col-span-5 space-y-4">
+                    <div class="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-md hover:border-emerald-600 transition">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-emeraldDeep text-amber-400 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-ear-listen"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-black text-slate-900 text-base sm:text-lg" data-i18n="pillar_1_t">الإصغاء الدائم والقرب الميداني</h3>
+                                <p class="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed" data-i18n="pillar_1_d">فتح قنوات تواصل مباشرة ودورية مع سكان الأحياء والجمعيات المحلية لرفع الانشغالات ومتابعة حلولها ميدانياً.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-md hover:border-emerald-600 transition">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-city"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-black text-slate-900 text-base sm:text-lg" data-i18n="pillar_2_t">التنمية المتوازنة لكل الأحياء</h3>
+                                <p class="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed" data-i18n="pillar_2_d">توزيع عادل للمشاريع التنموية يشمل وسط المدينة والأقطاب الحضرية الجديدة والمناطق الساحلية والفلاحية.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-md hover:border-emerald-600 transition">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-emerald-700 text-white flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-black text-slate-900 text-base sm:text-lg" data-i18n="pillar_3_t">عصرنة ورقمنة الخدمة العمومية</h3>
+                                <p class="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed" data-i18n="pillar_3_d">تبسيط الإجراءات الإدارية واعتماد الحلول الرقمية لتقريب الإدارة البلدية من المواطن والمستثمر بكل شفافية.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: COMPREHENSIVE ELECTORAL PROGRAM (البرنامج الانتخابي والتنموي الشامل بجميع محاوره ومشاريعه العملية) -->
+    <section id="program" class="py-16 sm:py-20 bg-white relative overflow-hidden border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-900 font-extrabold text-xs uppercase tracking-wider mb-3">
+                    <i class="fa-solid fa-compass text-amber-600"></i>
+                    <span data-i18n="prog_tag">محاور الإصلاح المحوري • بلدية وولاية عنابة</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900" data-i18n="prog_title">
+                    البرنامج الانتخابي والتنموي الشامل
+                </h2>
+                <p class="text-slate-600 mt-3 text-sm sm:text-base leading-relaxed" data-i18n="prog_subtitle">
+                    خطة عمل متكاملة وقابلة للتنفيذ تغطي كافة الأولويات الحيوية لسكان عنابة في التهيئة العمرانية، الرقمنة، الاقتصاد، البيئة، الشباب، والتضامن الاجتماعي.
+                </p>
+            </div>
+
+            <!-- Interactive Filter Tabs for the 6 Program Axes -->
+            <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-10" id="programTabs">
+                <button onclick="filterProgram('all')" class="prog-tab px-4 py-2 sm:px-5 sm:py-2.5 rounded-full font-extrabold text-xs sm:text-sm bg-amber-500 text-slate-950 shadow-lg transition cursor-pointer" data-filter="all" data-i18n="tab_all">جميع المحاور (6)</button>
+                <button onclick="filterProgram('urban')" class="prog-tab px-4 py-2 sm:px-5 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm bg-slate-100 text-slate-800 hover:bg-emerald-50 transition cursor-pointer" data-filter="urban" data-i18n="tab_urban">التهيئة والبنية التحتية</button>
+                <button onclick="filterProgram('digital')" class="prog-tab px-4 py-2 sm:px-5 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm bg-slate-100 text-slate-800 hover:bg-emerald-50 transition cursor-pointer" data-filter="digital" data-i18n="tab_digital">الرقمنة والإدارة الجوارية</button>
+                <button onclick="filterProgram('economy')" class="prog-tab px-4 py-2 sm:px-5 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm bg-slate-100 text-slate-800 hover:bg-emerald-50 transition cursor-pointer" data-filter="economy" data-i18n="tab_economy">الشباب والاقتصاد والسياحة</button>
+                <button onclick="filterProgram('env')" class="prog-tab px-4 py-2 sm:px-5 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm bg-slate-100 text-slate-800 hover:bg-emerald-50 transition cursor-pointer" data-filter="env" data-i18n="tab_env">النظافة والبيئة</button>
+                <button onclick="filterProgram('youth')" class="prog-tab px-4 py-2 sm:px-5 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm bg-slate-100 text-slate-800 hover:bg-emerald-50 transition cursor-pointer" data-filter="youth" data-i18n="tab_youth">الثقافة والرياضة</button>
+                <button onclick="filterProgram('social')" class="prog-tab px-4 py-2 sm:px-5 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm bg-slate-100 text-slate-800 hover:bg-emerald-50 transition cursor-pointer" data-filter="social" data-i18n="tab_social">التكافل والصحة الجوارية</button>
+            </div>
+
+            <!-- 6 Detailed Program Axes Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Axis 1: Urban Planning & Infrastructure -->
+                <div class="program-card rounded-3xl p-6 sm:p-7 bg-slate-50 border-2 border-slate-200/80 hover:border-emerald-600 shadow-sm hover:shadow-xl transition" data-category="urban">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-full bg-emeraldDeep text-amber-300 text-xs font-extrabold" data-i18n="axis_1_badge">المحور الأول</span>
+                        <div class="w-11 h-11 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-road"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-black text-slate-900 mb-3" data-i18n="axis_1_title">تهيئة الأحياء والبنية التحتية</h3>
+                    <ul class="space-y-2.5 text-sm text-slate-700 leading-relaxed">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i><span data-i18n="axis_1_p1">إعادة تأهيل الطرقات الحضرية المهترئة وتهيئة الأرصفة والمسالك عبر كافة أحياء عنابة.</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i><span data-i18n="axis_1_p2">تحديث شبكة الإنارة العمومية بتقنية LED الموفرة للطاقة لتعزيز الأمن الحضري ليلاً.</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i><span data-i18n="axis_1_p3">تطهير وصيانة قنوات الصرف الصحي وتصريف مياه الأمطار لحماية الأحياء من الفيضانات.</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i><span data-i18n="axis_1_p4">تنظيم مخطط المرور والنقل الحضري وتهيئة مواقف سيارات ذكية لفك الاختناق بوسط المدينة.</span></li>
+                    </ul>
+                </div>
+
+                <!-- Axis 2: Digitalization & Local Administration -->
+                <div class="program-card rounded-3xl p-6 sm:p-7 bg-slate-50 border-2 border-slate-200/80 hover:border-emerald-600 shadow-sm hover:shadow-xl transition" data-category="digital">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-full bg-emeraldDeep text-amber-300 text-xs font-extrabold" data-i18n="axis_2_badge">المحور الثاني</span>
+                        <div class="w-11 h-11 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-black text-slate-900 mb-3" data-i18n="axis_2_title">الرقمنة وتحديث الإدارة الجوارية</h3>
+                    <ul class="space-y-2.5 text-sm text-slate-700 leading-relaxed">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i><span data-i18n="axis_2_p1">إطلاق منصة رقمية بلدية تفاعلية لاستخراج الوثائق ومتابعة الملفات الإدارية عن بُعد.</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i><span data-i18n="axis_2_p2">إنشاء شباك موحد رقمي لتبسيط إجراءات رخص البناء، النشاطات التجارية، والملفات الاجتماعية.</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i><span data-i18n="axis_2_p3">تفعيل نظام إلكتروني للتبليغ الفوري عن الأعطاب الحضرية ومتابعة معالجتها بالآجال المحددة.</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i><span data-i18n="axis_2_p4">نشر الميزانية التشاركية وحصيلة المشاريع المنجزة دوريًا لتكريس الشفافية والرقابة الشعبية.</span></li>
+                    </ul>
+                </div>
+
+                <!-- Axis 3: Youth, Startups, Employment & Tourism -->
+                <div class="program-card rounded-3xl p-6 sm:p-7 bg-slate-50 border-2 border-slate-200/80 hover:border-emerald-600 shadow-sm hover:shadow-xl transition" data-category="economy">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-full bg-emeraldDeep text-amber-300 text-xs font-extrabold" data-i18n="axis_3_badge">المحور الثالث</span>
+                        <div class="w-11 h-11 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-black text-slate-900 mb-3" data-i18n="axis_3_title">دعم الشباب، التشغيل والاقتصاد المحلي</h3>
+                    <ul class="space-y-2.5 text-sm text-slate-700 leading-relaxed">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i><span data-i18n="axis_3_p1">تخصيص محلات وفضاءات نشاط منظمة للشباب حاملي المشاريع والحرفيين والمؤسسات الناشئة.</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i><span data-i18n="axis_3_p2">تثمين الواجهة البحرية والكورنيش وشواطئ سرايدي وشطايبي لاستقطاب السياحة العائلية.</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i><span data-i18n="axis_3_p3">مرافقة المستثمرين المحليين وتسهيل العقار الاقتصادي لخلق مناصب شغل دائمة لأبناء الولاية.</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i><span data-i18n="axis_3_p4">تنظيم الأسواق الجوارية والقضاء على التجارة الفوضوية بما يحفظ كرامة التاجر والمستهلك.</span></li>
+                    </ul>
+                </div>
+
+                <!-- Axis 4: Cleanliness, Environment & Green Spaces -->
+                <div class="program-card rounded-3xl p-6 sm:p-7 bg-slate-50 border-2 border-slate-200/80 hover:border-emerald-600 shadow-sm hover:shadow-xl transition" data-category="env">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-full bg-emeraldDeep text-amber-300 text-xs font-extrabold" data-i18n="axis_4_badge">المحور الرابع</span>
+                        <div class="w-11 h-11 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-leaf"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-black text-slate-900 mb-3" data-i18n="axis_4_title">النظافة، البيئة والمساحات الخضراء</h3>
+                    <ul class="space-y-2.5 text-sm text-slate-700 leading-relaxed">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i><span data-i18n="axis_4_p1">تعزيز مخطط رفع النفايات المنزلية وتعميم الحاويات المطمورة ونقاط الفرز الانتقائي.</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i><span data-i18n="axis_4_p2">إعادة تهيئة الحدائق العمومية والساحات العائلية وإطلاق حملات تشجير واسعة داخل الأحياء.</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i><span data-i18n="axis_4_p3">حماية المحيط الغابي لجبل إيدوغ والمناطق الرطبة والشواطئ من التلوث والنفايات.</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i><span data-i18n="axis_4_p4">إشراك الجمعيات البيئية ولجان الأحياء في مبادرات النظافة المستدامة والتوعية الحضرية.</span></li>
+                    </ul>
+                </div>
+
+                <!-- Axis 5: Culture, Sports & Youth Facilities -->
+                <div class="program-card rounded-3xl p-6 sm:p-7 bg-slate-50 border-2 border-slate-200/80 hover:border-emerald-600 shadow-sm hover:shadow-xl transition" data-category="youth">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-full bg-emeraldDeep text-amber-300 text-xs font-extrabold" data-i18n="axis_5_badge">المحور الخامس</span>
+                        <div class="w-11 h-11 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-futbol"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-black text-slate-900 mb-3" data-i18n="axis_5_title">الثقافة، الرياضة والمرافق الشبانية</h3>
+                    <ul class="space-y-2.5 text-sm text-slate-700 leading-relaxed">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i><span data-i18n="axis_5_p1">إنجاز وتأهيل الملاعب الجوارية المعشوشبة وقاعات الرياضة في مختلف الأحياء السكنية.</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i><span data-i18n="axis_5_p2">تقديم دعم مادي ولوجستي شفاف للنوادي الرياضية الهاوية والجمعيات الشبانية الفاعلة.</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i><span data-i18n="axis_5_p3">تفعيل دور الشباب والمكتبات البلدية وتزويدها بفضاءات للمطالعة والابتكار التكنولوجي.</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i><span data-i18n="axis_5_p4">إحياء التراث الثقافي والتاريخي لمدينة بونة وتنظيم تظاهرات فنية وعلمية للعائلات.</span></li>
+                    </ul>
+                </div>
+
+                <!-- Axis 6: Social Solidarity, Schools & Proximity Health -->
+                <div class="program-card rounded-3xl p-6 sm:p-7 bg-slate-50 border-2 border-slate-200/80 hover:border-emerald-600 shadow-sm hover:shadow-xl transition" data-category="social">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-full bg-emeraldDeep text-amber-300 text-xs font-extrabold" data-i18n="axis_6_badge">المحور السادس</span>
+                        <div class="w-11 h-11 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-hand-holding-heart"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-black text-slate-900 mb-3" data-i18n="axis_6_title">التكافل الاجتماعي والصحة الجوارية</h3>
+                    <ul class="space-y-2.5 text-sm text-slate-700 leading-relaxed">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i><span data-i18n="axis_6_p1">ضمان التدفئة، النقل المدرسي المنتظم، ووجبات الإطعام الصحي في كافة المدارس الابتدائية.</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i><span data-i18n="axis_6_p2">تجهيز العيادات متعددة الخدمات وقاعات العلاج الجوارية بالأحياء ذات الكثافة السكانية.</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i><span data-i18n="axis_6_p3">مرافقة العائلات المتعففة والأيتام وذوي الهمم وتهيئة الممرات الخاصة لتسهيل تنقلهم.</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-emerald-600 mt-1 shrink-0"></i><span data-i18n="axis_6_p4">تخصيص يوم استقبال أسبوعي مفتوح للاستماع المباشر لانشغالات المواطنين ومتابعتها.</span></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: LEGAL BASIS & ARTICLES (السند القانوني والمواد المرجعية بخط أنيق ومباشر أسفل البرنامج) -->
+    <section id="legal-framework" class="py-14 bg-slate-900 text-white relative overflow-hidden border-b border-amber-400/20">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(6,95,70,0.35),transparent_60%)] pointer-events-none"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-8">
+                <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-400/15 text-amber-300 border border-amber-400/30 font-bold text-xs uppercase tracking-wider mb-2">
+                    <i class="fa-solid fa-gavel"></i>
+                    <span data-i18n="legal_tag">المرجعية الدستورية والقانونية للبرنامج</span>
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-black text-white" data-i18n="legal_title">
+                    السند القانوني والمواد المرجعية الداعمة للبرنامج
+                </h2>
+                <p class="text-slate-300 mt-2 text-xs sm:text-sm leading-relaxed" data-i18n="legal_subtitle">
+                    يستند كل محور في برنامجنا إلى الصلاحيات المخولة قانوناً للمنتخب المحلي وفق قوانين الجمهورية الجزائرية الديمقراطية الشعبية لضمان التزامات قابلة للتجسيد الميداني.
+                </p>
+            </div>
+
+            <!-- Legal Basis Filter Tabs -->
+            <div class="flex flex-wrap items-center justify-center gap-2 mb-8" id="legalTabs">
+                <button onclick="filterLegal('all')" class="legal-tab active px-4 py-1.5 rounded-full font-extrabold text-xs bg-amber-500 text-slate-950 shadow transition cursor-pointer" data-legal="all" data-i18n="legal_tab_all">جميع النصوص القانونية</button>
+                <button onclick="filterLegal('commune')" class="legal-tab px-4 py-1.5 rounded-full font-bold text-xs bg-white/10 text-white hover:bg-white/20 transition cursor-pointer" data-legal="commune" data-i18n="legal_tab_commune">قانون البلدية 11-10</button>
+                <button onclick="filterLegal('election')" class="legal-tab px-4 py-1.5 rounded-full font-bold text-xs bg-white/10 text-white hover:bg-white/20 transition cursor-pointer" data-legal="election" data-i18n="legal_tab_election">قانون الانتخابات 21-01</button>
+                <button onclick="filterLegal('participatory')" class="legal-tab px-4 py-1.5 rounded-full font-bold text-xs bg-white/10 text-white hover:bg-white/20 transition cursor-pointer" data-legal="participatory" data-i18n="legal_tab_part">الديمقراطية التشاركية</button>
+            </div>
+
+            <!-- Legal Articles Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="legalCardsGrid">
+                <!-- Populated dynamically via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: ANNABA 12 COMMUNES COVERAGE -->
+    <section id="annaba-map" class="py-16 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                <div>
+                    <span class="text-xs font-extrabold uppercase tracking-wider text-emerald-800" data-i18n="communes_tag">تغطية شاملة عبر تراب الولاية</span>
+                    <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1" data-i18n="communes_title">في خدمة جميع بلديات ولاية عنابة (12 بلدية)</h2>
+                </div>
+                <p class="text-sm text-slate-600 max-w-md" data-i18n="communes_desc">
+                    برنامجنا يراعي خصوصية كل بلدية، من الواجهة الساحلية إلى الأقطاب الحضرية والمناطق الفلاحية.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3" id="communesList">
+                <!-- Populated dynamically via JS for seamless AR/FR translation -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: CITIZENS PARTICIPATION, VISITOR COMMENTS & STAR RATINGS (تعليقات وتقييمات الزوار بالنجوم) -->
+    <section id="citizen-reviews" class="py-20 bg-gradient-to-b from-slate-100 to-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-900 font-extrabold text-xs uppercase tracking-wider mb-3">
+                    <i class="fa-solid fa-star text-amber-500"></i>
+                    <span data-i18n="rev_tag">الشفافية والتفاعل الشعبي المباشر</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900" data-i18n="rev_title">
+                    تعليقات وآراء الزوار وسكان عنابة حول البرنامج
+                </h2>
+                <p class="text-slate-600 mt-3 text-sm sm:text-base" data-i18n="rev_subtitle">
+                    قيّم مدى اقتناعك بمحاور البرنامج الانتخابي (من 1 إلى 5 نجمات) وأضف تعليقك ليظهر مباشرة للزوار على الصفحة.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- Left Column: Rating Summary & Interactive Star Submission -->
+                <div class="lg:col-span-5 space-y-6">
+                    <!-- Rating Breakdown Dashboard -->
+                    <div class="bg-emeraldDeep text-white rounded-3xl p-6 sm:p-8 shadow-xl border border-amber-400/35">
+                        <div class="flex items-center justify-between gap-4 pb-6 border-b border-white/15">
+                            <div>
+                                <span class="block text-xs font-bold text-amber-300 uppercase" data-i18n="rev_avg_label">مؤشر رضا الزوار</span>
+                                <div class="flex items-baseline gap-2 mt-1">
+                                    <span id="avgRatingScore" class="text-4xl sm:text-5xl font-black text-white">4.8</span>
+                                    <span class="text-sm text-amber-300 font-bold">/ 5</span>
+                                </div>
+                                <div class="flex items-center gap-1 text-amber-400 text-sm mt-1.5" id="avgStarsIcons">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <span id="totalReviewsCount" class="block text-3xl font-black text-amber-400">6</span>
+                                <span class="text-xs text-slate-300 font-bold" data-i18n="rev_total_participants">تعليق ومشاركة</span>
+                            </div>
+                        </div>
+
+                        <!-- 5-to-1 Star Bars -->
+                        <div class="pt-5 space-y-2.5 text-xs" id="ratingBarsContainer">
+                            <!-- Rendered dynamically via JS -->
+                        </div>
+                    </div>
+
+                    <!-- Interactive Star Rating Form -->
+                    <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg border border-slate-200">
+                        <h3 class="text-xl font-black text-slate-900 mb-1" data-i18n="rev_form_title">أضف تقييمك وتعليقك الآن</h3>
+                        <p class="text-xs text-slate-500 mb-5" data-i18n="rev_form_hint">اختر عدد النجوم الذي يعبر عن رأيك في البرنامج:</p>
+
+                        <form id="starReviewForm" onsubmit="handleStarReviewSubmit(event)" class="space-y-4">
+                            <!-- Interactive 1-5 Stars Selector -->
+                            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center">
+                                <div class="flex items-center justify-center gap-2 sm:gap-3 text-2xl sm:text-3xl" id="starSelector">
+                                    <button type="button" onclick="selectStarRating(1)" onmouseenter="hoverStarRating(1)" onmouseleave="resetStarHover()" class="star-btn text-amber-400 transition transform hover:scale-125 cursor-pointer" data-val="1" aria-label="1 Star"><i class="fa-solid fa-star"></i></button>
+                                    <button type="button" onclick="selectStarRating(2)" onmouseenter="hoverStarRating(2)" onmouseleave="resetStarHover()" class="star-btn text-amber-400 transition transform hover:scale-125 cursor-pointer" data-val="2" aria-label="2 Stars"><i class="fa-solid fa-star"></i></button>
+                                    <button type="button" onclick="selectStarRating(3)" onmouseenter="hoverStarRating(3)" onmouseleave="resetStarHover()" class="star-btn text-amber-400 transition transform hover:scale-125 cursor-pointer" data-val="3" aria-label="3 Stars"><i class="fa-solid fa-star"></i></button>
+                                    <button type="button" onclick="selectStarRating(4)" onmouseenter="hoverStarRating(4)" onmouseleave="resetStarHover()" class="star-btn text-amber-400 transition transform hover:scale-125 cursor-pointer" data-val="4" aria-label="4 Stars"><i class="fa-solid fa-star"></i></button>
+                                    <button type="button" onclick="selectStarRating(5)" onmouseenter="hoverStarRating(5)" onmouseleave="resetStarHover()" class="star-btn text-amber-400 transition transform hover:scale-125 cursor-pointer" data-val="5" aria-label="5 Stars"><i class="fa-solid fa-star"></i></button>
+                                </div>
+                                <div id="selectedRatingBadge" class="mt-2.5 inline-block px-3.5 py-1 rounded-full bg-emerald-100 text-emerald-900 font-extrabold text-xs">
+                                    5 نجمات: موافق جداً
+                                </div>
+                                <input type="hidden" id="selectedRatingValue" value="5">
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block text-xs font-extrabold text-slate-700 mb-1" data-i18n="rev_lbl_name">الاسم أو اللقب</label>
+                                    <input type="text" id="reviewerName" required class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 focus:border-emerald-600 outline-none text-sm" placeholder="مثال: كريم ب.">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-extrabold text-slate-700 mb-1" data-i18n="rev_lbl_area">الحي / البلدية</label>
+                                    <input type="text" id="reviewerArea" required class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 focus:border-emerald-600 outline-none text-sm" placeholder="مثال: سيدي عمار">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-extrabold text-slate-700 mb-1" data-i18n="rev_lbl_comment">تعليقك أو رأيك</label>
+                                <textarea id="reviewerComment" rows="3" required class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 focus:border-emerald-600 outline-none text-sm" placeholder="اكتب تعليقك بكل حرية حول البرنامج..."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-sm shadow-md transition flex items-center justify-center gap-2 cursor-pointer">
+                                <i class="fa-solid fa-star"></i>
+                                <span data-i18n="rev_btn_post">نشر التعليق والتقييم</span>
+                            </button>
+                        </form>
+
+                        <div id="reviewToast" class="hidden mt-4 p-3 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-900 text-xs font-extrabold flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-emerald-600 text-base"></i>
+                            <span id="reviewToastText">تم نشر تعليقك وتقييمك بنجاح في قائمة الزوار!</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Live Public Visitor Comments Feed -->
+                <div class="lg:col-span-7 space-y-4">
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="text-lg font-black text-slate-900 flex items-center gap-2">
+                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse"></span>
+                            <span data-i18n="rev_feed_title">أحدث تعليقات ومشاركات الزوار</span>
+                        </h3>
+                        <select id="reviewFilterSelect" onchange="renderCitizenReviews()" class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-700 outline-none">
+                            <option value="all" data-i18n="rev_filter_all">جميع التقييمات</option>
+                            <option value="5">★★★★★ (5)</option>
+                            <option value="4">★★★★☆ (4)</option>
+                            <option value="3">★★★☆☆ (3)</option>
+                            <option value="2">★★☆☆☆ (2)</option>
+                            <option value="1">★☆☆☆☆ (1)</option>
+                        </select>
+                    </div>
+
+                    <div id="citizenReviewsFeed" class="space-y-4 max-h-[680px] overflow-y-auto pe-1">
+                        <!-- Populated dynamically via JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: CITIZEN PARTICIPATION & DIGITAL CAMPAIGN CARD -->
+    <section id="participate" class="py-20 bg-slate-50 annaba-section-watermark">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                
+                <!-- Interactive Citizen Proposal Form -->
+                <div class="lg:col-span-7 bg-white rounded-3xl p-8 sm:p-10 shadow-xl border border-slate-100">
+                    <span class="inline-block px-3.5 py-1 rounded-full bg-emerald-100 text-emerald-900 font-extrabold text-xs mb-3" data-i18n="form_tag">
+                        صوتك يصنع القرار
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-black text-slate-900" data-i18n="form_title">
+                        شاركنا انشغالات حيك ومقترحاتك لعنابة
+                    </h2>
+                    <p class="text-sm text-slate-600 mt-2 mb-6" data-i18n="form_desc">
+                        سجل مقترحك التنموي أو انشغالك المحلي ليتم إدراجه ضمن أولويات المتابعة الميدانية، أو أرسله مباشرة عبر الواتساب.
+                    </p>
+
+                    <form id="citizenForm" onsubmit="handleProposalSubmit(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-extrabold text-slate-700 mb-1.5" data-i18n="lbl_name">الاسم الكامل (اختياري)</label>
+                                <input type="text" id="citizenName" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20 outline-none text-sm" placeholder="مثال: محمد أمين">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-extrabold text-slate-700 mb-1.5" data-i18n="lbl_commune">البلدية / الحي</label>
+                                <select id="citizenCommune" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20 outline-none text-sm font-semibold">
+                                    <option value="عنابة وسط">عنابة وسط / Annaba Centre</option>
+                                    <option value="البوني">البوني / El Bouni</option>
+                                    <option value="الحجار">الحجار / El Hadjar</option>
+                                    <option value="سيدي عمار">سيدي عمار / Sidi Amar</option>
+                                    <option value="برحال">برحال / Berrahal</option>
+                                    <option value="شطايبي">شطايبي / Chetaïbi</option>
+                                    <option value="سرايدي">سرايدي / Seraïdi</option>
+                                    <option value="عين الباردة">عين الباردة / Aïn Berda</option>
+                                    <option value="العلمة">العلمة / Eulma</option>
+                                    <option value="واد العنب">واد العنب / Oued El Aneb</option>
+                                    <option value="التريعات">التريعات / Treat</option>
+                                    <option value="الشرفة">الشرفة / Chorfa</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-extrabold text-slate-700 mb-1.5" data-i18n="lbl_topic">مجال المقترح</label>
+                            <select id="citizenTopic" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20 outline-none text-sm font-semibold">
+                                <option value="التهيئة والطرقات">التهيئة العمرانية والطرقات / Voirie & Urbanisme</option>
+                                <option value="النظافة والبيئة">النظافة والمساحات الخضراء / Propreté & Environnement</option>
+                                <option value="الشباب والرياضة">الشباب والرياضة / Jeunesse & Sports</option>
+                                <option value="المدارس والصحة">المدارس والصحة الجوارية / Écoles & Santé</option>
+                                <option value="التشغيل والاقتصاد">الاستثمار والتشغيل / Économie & Emploi</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-extrabold text-slate-700 mb-1.5" data-i18n="lbl_msg">تفاصيل المقترح أو الانشغال</label>
+                            <textarea id="citizenMessage" rows="4" required class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20 outline-none text-sm" placeholder="اكتب مقترحك هنا بكل وضوح..."></textarea>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <button type="submit" class="w-full py-4 rounded-2xl bg-emeraldDeep hover:bg-emeraldRich text-white font-black text-sm shadow-lg transition flex items-center justify-center gap-2 cursor-pointer">
+                                <i class="fa-solid fa-paper-plane text-amber-400"></i>
+                                <span data-i18n="btn_submit">إرسال المقترح للمترشح</span>
+                            </button>
+                            <button type="button" onclick="sendProposalViaWhatsApp()" class="w-full py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-sm shadow-lg transition flex items-center justify-center gap-2 cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                <span data-i18n="btn_submit_wa">إرسال مباشر عبر واتساب</span>
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Instant Toast / Confirmation Box (No alert()) -->
+                    <div id="formFeedback" class="hidden mt-5 p-4 rounded-2xl bg-emerald-50 border border-emerald-300 text-emerald-950 text-sm font-bold flex items-center gap-3">
+                        <i class="fa-solid fa-circle-check text-emerald-600 text-xl"></i>
+                        <span id="formFeedbackText">تم تسجيل مقترحك بنجاح! شكراً لمساهمتك في بناء عنابة.</span>
+                    </div>
+                </div>
+
+                <!-- Shareable Voting Reminder Card (List 1 - Candidate 27) -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="rounded-3xl bg-gradient-to-br from-emeraldDeep via-slate-900 to-emeraldDeep p-8 text-white shadow-2xl border-2 border-amber-400/55 relative overflow-hidden">
+                        <div class="relative z-10 text-center space-y-5">
+                            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-400/20 border border-amber-400/40 text-amber-300 text-xs font-extrabold">
+                                <i class="fa-solid fa-check-to-slot"></i>
+                                <span data-i18n="ballot_guide_tag">بطاقة التذكير الانتخابي</span>
+                            </div>
+
+                            <h3 class="text-2xl font-black text-white" data-i18n="ballot_party">حزب جبهة التحرير الوطني</h3>
+                            <p class="text-sm font-black bg-gradient-to-r from-[#FDE68A] via-[#D4AF37] to-[#F59E0B] bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(212,175,55,0.45)]" data-i18n="ballot_wilaya">الدائرة الانتخابية: ولاية عنابة • المترشح لعبيدي لمين</p>
+
+                            <div class="grid grid-cols-2 gap-4 py-2">
+                                <div class="rounded-2xl bg-white/10 border border-amber-400/50 p-4">
+                                    <span class="block text-xs font-bold text-amber-300" data-i18n="label_list_num">رقم اللائحة</span>
+                                    <span class="block text-5xl font-black text-white mt-1">1</span>
+                                </div>
+                                <div class="rounded-2xl bg-white/10 border border-emerald-400/50 p-4">
+                                    <span class="block text-xs font-bold text-emerald-300" data-i18n="label_cand_num">رقم المترشح</span>
+                                    <span class="block text-5xl font-black text-amber-400 mt-1">27</span>
+                                </div>
+                            </div>
+
+                            <p class="text-xs sm:text-sm text-slate-200 leading-relaxed" data-i18n="ballot_note">
+                                شارك رابط الموقع الرسمي للحملة مع أهلك وأصدقائك في عنابة للتعريف بالبرنامج الانتخابي، أو تواصل معنا مباشرة عبر الواتساب.
+                            </p>
+
+                            <!-- Copy Link & Share Actions -->
+                            <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                                <button onclick="copyCampaignLink()" class="flex-1 py-3 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs sm:text-sm transition flex items-center justify-center gap-2 cursor-pointer">
+                                    <i class="fa-solid fa-link"></i>
+                                    <span id="copyBtnText" data-i18n="btn_copy">نسخ رابط الحملة</span>
+                                </button>
+                                <a href="https://wa.me/213540164499?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%D9%83%D9%85%20%D8%A8%D8%AE%D8%B5%D9%88%D8%B5%20%D8%A7%D9%84%D8%AD%D9%85%D9%84%D8%A9%20%D8%A7%D9%84%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%D9%8A%D8%A9%20%D8%A8%D8%B9%D9%86%D8%A7%D8%A8%D8%A9%20(%D8%A7%D9%84%D9%84%D8%A7%D8%A6%D8%AD%D8%A9%201%20-%20%D8%A7%D9%84%D9%85%D8%AA%D8%B1%D8%B4%D8%AD%2027)" target="_blank" rel="noopener" class="flex-1 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs sm:text-sm transition flex items-center justify-center gap-2">
+                                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                                    <span data-i18n="btn_whatsapp_direct">واتساب الحملة</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER WITH DIRECT WHATSAPP CONTACT (+213 540 16 44 99) -->
+    <footer class="bg-slate-950 text-slate-300 border-t border-amber-500/20 pt-14 pb-24 sm:pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10 border-b border-white/10">
+                <div class="space-y-3">
+                    <h4 class="text-xl font-black bg-gradient-to-r from-[#FDE68A] via-[#D4AF37] to-[#F59E0B] bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(212,175,55,0.45)]" data-i18n="footer_candidate">لعبيدي لمين • حزب جبهة التحرير الوطني</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed" data-i18n="footer_desc">
+                        الحملة الانتخابية للمجالس الشعبية المحلية • ولاية عنابة. نحو تنمية محلية مستدامة وإدارة جوارية حديثة.
+                    </p>
+                    <!-- Direct WhatsApp Contact Box in Footer -->
+                    <div class="pt-2">
+                        <a href="https://wa.me/213540164499" target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-4 py-3 rounded-2xl bg-emerald-950/90 hover:bg-emerald-900 border border-emerald-500/40 text-white transition group shadow-lg">
+                            <span class="w-10 h-10 rounded-xl bg-emerald-500 text-slate-950 flex items-center justify-center text-xl group-hover:scale-110 transition">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </span>
+                            <div>
+                                <span class="block text-[11px] font-bold text-emerald-300" data-i18n="footer_wa_label">الرقم المباشر للحملة (واتساب)</span>
+                                <span class="block text-base font-black tracking-wider text-white" dir="ltr">+213 540 16 44 99</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="text-sm font-extrabold uppercase tracking-wider text-amber-400" data-i18n="footer_links_t">روابط سريعة</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#hero" class="hover:text-amber-300 transition" data-i18n="nav_home">الرئيسية</a></li>
+                        <li><a href="#vision" class="hover:text-amber-300 transition" data-i18n="nav_vision">كلمة المترشح</a></li>
+                        <li><a href="#program" class="hover:text-amber-300 transition" data-i18n="nav_program">البرنامج الانتخابي</a></li>
+                        <li><a href="#legal-framework" class="hover:text-amber-300 transition" data-i18n="nav_legal">السند القانوني</a></li>
+                        <li><a href="#citizen-reviews" class="hover:text-amber-300 transition" data-i18n="nav_reviews">تعليقات الزوار</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="text-sm font-extrabold uppercase tracking-wider text-amber-400" data-i18n="footer_numbers_t">بيانات الترشح الرسمية</h4>
+                    <div class="inline-flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl px-5 py-3">
+                        <div>
+                            <span class="block text-xs text-slate-400" data-i18n="label_list_num">رقم اللائحة</span>
+                            <span class="text-2xl font-black text-white">1</span>
+                        </div>
+                        <div class="h-8 w-px bg-white/15"></div>
+                        <div>
+                            <span class="block text-xs text-slate-400" data-i18n="label_cand_num">رقم المترشح</span>
+                            <span class="text-2xl font-black text-amber-400">27</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-400 pt-1" data-i18n="footer_wa_note">يسعدنا استقبال رسائلكم واستفساراتكم عبر الواتساب طيلة أيام الأسبوع.</p>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3">
+                <p data-i18n="footer_copy">© 2026 الحملة الانتخابية للمترشح لعبيدي لمين - ولاية عنابة | جميع الحقوق محفوظة.</p>
+                <p class="text-slate-400 font-semibold">WhatsApp: <span dir="ltr">+213 540 16 44 99</span> • Annaba 🇩🇿</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Quick WhatsApp Button (Positioned cleanly so it never covers hero text on mobile) -->
+    <a href="https://wa.me/213540164499" target="_blank" rel="noopener" aria-label="WhatsApp Direct Contact" class="fixed bottom-4 left-4 z-40 flex items-center gap-2 bg-emerald-600/95 hover:bg-emerald-500 backdrop-blur-md text-white font-extrabold text-xs sm:text-sm px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-full shadow-[0_10px_25px_rgba(5,150,105,0.45)] border border-emerald-300/40 transition transform hover:scale-105">
+        <i class="fa-brands fa-whatsapp text-lg sm:text-xl"></i>
+        <span dir="ltr" class="font-black">+213 540 16 44 99</span>
+    </a>
+
+    <!-- Hidden Input for Reliable Clipboard Copy -->
+    <input type="text" id="hiddenUrlInput" class="sr-only" aria-hidden="true">
+
+    <!-- Bilingual Dictionary & Interactive Logic -->
+    <script>
+        let currentLang = 'ar';
+        let selectedStars = 5;
+
+        // Multi-source fallback for Candidate Photo to ensure 100% visibility
+        let imgAttempt = 0;
+        function handleCandidateImgError(imgEl) {
+            imgAttempt++;
+            if (imgAttempt === 1) {
+                imgEl.src = 'https://cdn.jsdelivr.net/gh/koreaone10-del/Lamine@main/1794840743395.jpg';
+            } else if (imgAttempt === 2) {
+                imgEl.src = './1794840743395.jpg';
+            } else {
+                imgEl.onerror = null;
+                imgEl.src = 'https://placehold.co/800x1060/043927/fbbf24?text=FLN+%E2%80%A2+Liste+1+%E2%80%A2+Candidat+27';
+            }
+        }
+
+        const communesData = [
+            { ar: 'عنابة وسط', fr: 'Annaba Centre' },
+            { ar: 'البوني', fr: 'El Bouni' },
+            { ar: 'الحجار', fr: 'El Hadjar' },
+            { ar: 'سيدي عمار', fr: 'Sidi Amar' },
+            { ar: 'برحال', fr: 'Berrahal' },
+            { ar: 'شطايبي', fr: 'Chetaïbi' },
+            { ar: 'سرايدي', fr: 'Seraïdi' },
+            { ar: 'عين الباردة', fr: 'Aïn Berda' },
+            { ar: 'العلمة', fr: 'Eulma' },
+            { ar: 'واد العنب', fr: 'Oued El Aneb' },
+            { ar: 'التريعات', fr: 'Treat' },
+            { ar: 'الشرفة', fr: 'Chorfa' }
+        ];
+
+        // Legal Articles & Citations Database (Bilingual AR / FR)
+        const legalArticlesData = [
+            {
+                category: 'commune',
+                lawAr: 'قانون البلدية رقم 11-10 المؤرخ في 22 يونيو 2011',
+                lawFr: 'Loi n° 11-10 du 22 juin 2011 relative à la commune',
+                articleAr: 'المادة 107 والمادة 108',
+                articleFr: 'Articles 107 & 108',
+                titleAr: 'إعداد وتنفيذ مخططات التنمية المحلية والتهيئة العمرانية',
+                titleFr: 'Élaboration et exécution des plans communaux de développement',
+                descAr: 'السند القانوني الذي يخول للمجلس الشعبي البلدي اقتراح ومتابعة مشاريع تهيئة الطرقات، الإنارة العمومية، وتحديث الشبكات الحضرية بما يخدم سكان عنابة.',
+                descFr: 'Base juridique habilitant l’Assemblée Populaire Communale à initier et suivre les projets de voirie, d’éclairage public et de modernisation urbaine à Annaba.'
+            },
+            {
+                category: 'commune',
+                lawAr: 'قانون البلدية رقم 11-10 المؤرخ في 22 يونيو 2011',
+                lawFr: 'Loi n° 11-10 du 22 juin 2011 relative à la commune',
+                articleAr: 'المادة 123 والمادة 124',
+                articleFr: 'Articles 123 & 124',
+                titleAr: 'النظافة العمومية، حماية البيئة والمساحات الخضراء',
+                titleFr: 'Salubrité publique, protection de l’environnement et espaces verts',
+                descAr: 'تلزم هذه المواد البلدية بالسهر الدائم على جمع النفايات المنزلية، تطهير المحيط، وحماية الشواطئ والمناطق الغابية (كجبل إيدوغ والكورنيش).',
+                descFr: 'Dispositions imposant à la commune la gestion rigoureuse des déchets ménagers, l’hygiène publique et la préservation du littoral et du massif de l’Edough.'
+            },
+            {
+                category: 'commune',
+                lawAr: 'قانون البلدية رقم 11-10 المؤرخ في 22 يونيو 2011',
+                lawFr: 'Loi n° 11-10 du 22 juin 2011 relative à la commune',
+                articleAr: 'المادة 122 والمادة 176',
+                articleFr: 'Articles 122 & 176',
+                titleAr: 'صيانة المدارس الابتدائية والإطعام والنقل المدرسي',
+                titleFr: 'Entretien des écoles primaires, cantines et transport scolaire',
+                descAr: 'السند القانوني لتخصيص اعتمادات مالية من ميزانية البلدية لضمان التدفئة، المطاعم المدرسية، وتجهيز المرافق التربوية والرياضية الجوارية.',
+                descFr: 'Fondement légal permettant d’allouer les crédits budgétaires communaux au chauffage, aux cantines scolaires et aux infrastructures sportives de proximité.'
+            },
+            {
+                category: 'election',
+                lawAr: 'الأمر رقم 21-01 المؤرخ في 10 مارس 2021 (القانون العضوي للانتخابات)',
+                lawFr: 'Ordonnance n° 21-01 du 10 mars 2021 (Loi organique relative au régime électoral)',
+                articleAr: 'المادة 169 والمادة 191',
+                articleFr: 'Articles 169 & 191',
+                titleAr: 'التمثيل الديمقراطي والالتزام بالبرنامج الانتخابي أمام الناخبين',
+                titleFr: 'Représentation démocratique et engagement programmatique',
+                descAr: 'تؤطر هذه المواد شروط الترشح للمجالس الشعبية البلدية والولائية وتكرس مبدأ المسؤولية السياسية والأخلاقية للمنتخب تجاه ناخبي دائرته.',
+                descFr: 'Encadre l’élection des assemblées locales et consacre la responsabilité politique et éthique de l’élu envers les électeurs de sa circonscription.'
+            },
+            {
+                category: 'participatory',
+                lawAr: 'قانون البلدية 11-10 ومرسوم التشاور مع المجتمع المدني',
+                lawFr: 'Loi communale 11-10 & Textes sur la démocratie participative',
+                articleAr: 'المادة 11 والمادة 14',
+                articleFr: 'Articles 11 & 14',
+                titleAr: 'الديمقراطية التشاركية وإشراك لجان الأحياء والمواطنين',
+                titleFr: 'Démocratie participative et consultation des comités de quartiers',
+                descAr: 'تمنح السند القانوني لرئيس وأعضاء المجلس لعقد لقاءات تشاورية دورية مع المواطنين والجمعيات لضبط أولويات الميزانية التشاركية بكل شفافية.',
+                descFr: 'Donne assise légale à la tenue de consultations périodiques avec les citoyens et associations pour définir les priorités du budget participatif.'
+            },
+            {
+                category: 'commune',
+                lawAr: 'قانون البلدية رقم 11-10 (الباب المتعلق بالمالية والأملاك البلدية)',
+                lawFr: 'Loi n° 11-10 (Titre relatif aux finances et biens communaux)',
+                articleAr: 'المادة 151 والمادة 170',
+                articleFr: 'Articles 151 & 170',
+                titleAr: 'تثمين الممتلكات البلدية وتشجيع الاستثمار المحلي',
+                titleFr: 'Valorisation du patrimoine communal et promotion de l’investissement',
+                descAr: 'تتيح للمجلس تثمين العقار والمحلات التابعة للبلدية لخلق موارد مالية إضافية وتوفير فضاءات نشاط للشباب والحرفيين والمؤسسات الناشئة.',
+                descFr: 'Permet de valoriser le patrimoine immobilier communal afin de générer des ressources propres et d’offrir des locaux d’activité aux jeunes entrepreneurs.'
+            }
+        ];
+
+        // Rating Labels (1 to 5 Stars)
+        const starRatingLabels = {
+            5: { ar: '5 نجمات: موافق جداً', fr: '5 étoiles : Très favorable', badgeClass: 'bg-emerald-100 text-emerald-900' },
+            4: { ar: '4 نجمات: موافق', fr: '4 étoiles : Favorable', badgeClass: 'bg-emerald-50 text-emerald-800' },
+            3: { ar: '3 نجمات: مهتم وأتابع', fr: '3 étoiles : Intéressé / À suivre', badgeClass: 'bg-amber-100 text-amber-900' },
+            2: { ar: '2 نجمتان: لدي تحفظات', fr: '2 étoiles : Réservé', badgeClass: 'bg-orange-100 text-orange-900' },
+            1: { ar: '1 نجمة: غير مقتنع', fr: '1 étoile : Non convaincu', badgeClass: 'bg-red-100 text-red-900' }
+        };
+
+        // Initial Realistic Visitor Comments from Annaba
+        const defaultCitizenReviews = [
+            {
+                id: 1,
+                name: 'عبد الرحمان ب.',
+                area: 'عنابة وسط / Annaba Centre',
+                stars: 5,
+                commentAr: 'برنامج واقعي جداً خاصة في جانب تهيئة الطرقات وفك الاختناق المروري بوسط المدينة، كل التوفيق للأخ لعبيدي لمين في اللائحة 1 والمترشح 27.',
+                commentFr: 'Programme très réaliste, notamment sur la voirie et la fluidité du trafic au centre-ville. Bon courage à Lamine Labidi (Liste 1 - Candidat 27).',
+                dateAr: 'منذ ساعتين',
+                dateFr: 'Il y a 2 heures'
+            },
+            {
+                id: 2,
+                name: 'سهام م.',
+                area: 'البوني / El Bouni',
+                stars: 5,
+                commentAr: 'أعجبني كثيراً التركيز على المدارس الابتدائية والتدفئة والإطعام المدرسي، وكذلك رقمنة الإدارة البلدية لتسهيل الوثائق على المواطنين.',
+                commentFr: 'J’apprécie particulièrement la priorité donnée aux écoles primaires et à la numérisation des services communaux.',
+                dateAr: 'منذ 5 ساعات',
+                dateFr: 'Il y a 5 heures'
+            },
+            {
+                id: 3,
+                name: 'طارق ز.',
+                area: 'سيدي عمار / Sidi Amar',
+                stars: 4,
+                commentAr: 'مقترحات ممتازة لدعم الشباب والملاعب الجوارية، نأمل متابعة ميدانية مستمرة بعد الانتخابات في كل أحياء سيدي عمار.',
+                commentFr: 'Excellentes propositions pour les jeunes et les stades de proximité. Nous espérons un suivi rigoureux à Sidi Amar.',
+                dateAr: 'أمس',
+                dateFr: 'Hier'
+            },
+            {
+                id: 4,
+                name: 'نادية ك.',
+                area: 'سرايدي / Seraïdi',
+                stars: 5,
+                commentAr: 'تثمين السياحة العائلية في سرايدي وشطايبي وحماية الغابات من أولوياتنا، معكم قلباً وقالباً.',
+                commentFr: 'La valorisation du tourisme familial à Seraïdi et Chetaïbi ainsi que la protection des forêts sont essentielles.',
+                dateAr: 'منذ يومين',
+                dateFr: 'Il y a 2 jours'
+            },
+            {
+                id: 5,
+                name: 'يوسف ح.',
+                area: 'الحجار / El Hadjar',
+                stars: 3,
+                commentAr: 'نقاط مهمة في البرنامج، نريد تركيزاً أكبر على النقل الجامعي والربط بين الحجار ووسط عنابة.',
+                commentFr: 'Points importants dans le programme, nous souhaitons un focus renforcé sur le transport entre El Hadjar et le centre.',
+                dateAr: 'منذ 3 أيام',
+                dateFr: 'Il y a 3 jours'
+            },
+            {
+                id: 6,
+                name: 'سمير د.',
+                area: 'برحال / Berrahal',
+                stars: 5,
+                commentAr: 'الاستناد إلى مواد قانون البلدية يثبت أن العمل مدروس وليس مجرد وعود. بالتوفيق إن شاء الله.',
+                commentFr: 'S’appuyer sur les articles de la loi communale prouve le sérieux de la démarche. Plein succès.',
+                dateAr: 'منذ 4 أيام',
+                dateFr: 'Il y a 4 jours'
+            }
+        ];
+
+        function getStoredReviews() {
+            try {
+                const saved = localStorage.getItem('annaba_lamine_reviews_v2');
+                if (saved) {
+                    const parsed = JSON.parse(saved);
+                    if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+                }
+            } catch (e) {
+                console.warn('LocalStorage unavailable', e);
+            }
+            return defaultCitizenReviews;
+        }
+
+        function saveReviews(reviews) {
+            try {
+                localStorage.setItem('annaba_lamine_reviews_v2', JSON.stringify(reviews));
+            } catch (e) {
+                console.warn('Could not save review to LocalStorage', e);
+            }
+        }
+
+        const translations = {
+            ar: {
+                nav_candidate_name: 'لعبيدي لمين',
+                nav_party: 'حزب جبهة التحرير الوطني • عنابة',
+                nav_title: 'الإصلاح المحوري • عنابة',
+                nav_home: 'الرئيسية',
+                nav_vision: 'كلمة المترشح',
+                nav_program: 'البرنامج الانتخابي',
+                nav_legal: 'السند القانوني',
+                nav_reviews: 'تعليقات الزوار',
+                nav_communes: 'بلديات عنابة',
+                nav_contact: 'مقترحاتكم',
+                badge_list_short: 'اللائحة: 1',
+                badge_cand_short: 'المترشح: 27',
+                badge_list: 'رقم اللائحة: 1',
+                badge_cand: 'رقم المترشح: 27',
+                hero_election_tag: 'الانتخابات المحلية • بلدية وولاية عنابة (بونة)',
+                hero_party_full: 'حزب جبهة التحرير الوطني • عنابة',
+                hero_candidate_name: 'المترشح لعبيدي لمين',
+                hero_headline_1: 'الإصلاح المحوري',
+                hero_headline_2: 'والتنمية الشاملة لعنابة',
+                hero_subtitle: 'رؤية ميدانية متكاملة ترتكز على القرب الحقيقي من المواطن، تحديث البنية التحتية والأحياء، رقمنة الإدارة الجوارية، دعم الشباب والمؤسسات الناشئة، والارتقاء بالنظافة والبيئة في جوهرة الشرق الجزائري.',
+                label_list_num: 'رقم اللائحة',
+                label_cand_num: 'رقم المترشح',
+                cta_program: 'اكتشف البرنامج الانتخابي الكامل',
+                cta_reviews: 'شاهد وشارك رأيك بالنجوم',
+                live_badge: 'بث مباشر • الحملة الانتخابية',
+                card_candidate_name: 'لعبيدي لمين',
+                card_party: 'حزب جبهة التحرير الوطني',
+                card_role: 'مترشح حزب جبهة التحرير الوطني • عنابة',
+                mini_list: 'اللائحة',
+                mini_cand: 'المترشح',
+                vision_tag: 'كلمة المترشح والتزامه الميداني',
+                vision_title: 'معاً من أجل عنابة تليق بتاريخها وطموح شبابها',
+                vision_quote_1: '"أهلي وإخواني في ولاية عنابة العريقة، أنا أخوكم لعبيدي لمين، إن ترشحي ضمن قائمة حزب جبهة التحرير الوطني (اللائحة رقم 1 - المترشح رقم 27) ينبع من قناعة راسخة بأن العمل المحلي هو أساس التنمية الحقيقية التي يلمسها المواطن في حياته اليومية، بعيداً عن الوعود الجوفاء."',
+                vision_quote_2: 'نلتزم أن نكون صوتكم الصادق داخل المجلس المنتخب، وأن نعمل بشفافية وصرامة لمتابعة المشاريع التنموية في كل حي، تحديث الإدارة البلدية بالرقمنة، تحسين الإطار المعيشي، دعم المبادرات الشبانية والرياضية، وإعادة البريق السياحي والاقتصادي لجوهرة الشرق الجزائري.',
+                vision_sig_party: 'لعبيدي لمين • حزب جبهة التحرير الوطني',
+                vision_sig_sub: 'اللائحة رقم 1 • المترشح رقم 27 • عنابة',
+                vision_pledge: 'عهد الوفاء والعمل الميداني',
+                pillar_1_t: 'الإصغاء الدائم والقرب الميداني',
+                pillar_1_d: 'فتح قنوات تواصل مباشرة ودورية مع سكان الأحياء والجمعيات المحلية لرفع الانشغالات ومتابعة حلولها ميدانياً.',
+                pillar_2_t: 'التنمية المتوازنة لكل الأحياء',
+                pillar_2_d: 'توزيع عادل للمشاريع التنموية يشمل وسط المدينة والأقطاب الحضرية الجديدة والمناطق الساحلية والفلاحية.',
+                pillar_3_t: 'عصرنة ورقمنة الخدمة العمومية',
+                pillar_3_d: 'تبسيط الإجراءات الإدارية واعتماد الحلول الرقمية لتقريب الإدارة البلدية من المواطن والمستثمر بكل شفافية.',
+                prog_tag: 'محاور الإصلاح المحوري • بلدية وولاية عنابة',
+                prog_title: 'البرنامج الانتخابي والتنموي الشامل',
+                prog_subtitle: 'خطة عمل متكاملة وقابلة للتنفيذ تغطي كافة الأولويات الحيوية لسكان عنابة في التهيئة العمرانية، الرقمنة، الاقتصاد، البيئة، الشباب، والتضامن الاجتماعي.',
+                tab_all: 'جميع المحاور (6)',
+                tab_urban: 'التهيئة والبنية التحتية',
+                tab_digital: 'الرقمنة والإدارة الجوارية',
+                tab_economy: 'الشباب والاقتصاد والسياحة',
+                tab_env: 'النظافة والبيئة',
+                tab_youth: 'الثقافة والرياضة',
+                tab_social: 'التكافل والصحة الجوارية',
+                axis_1_badge: 'المحور الأول',
+                axis_1_title: 'تهيئة الأحياء والبنية التحتية',
+                axis_1_p1: 'إعادة تأهيل الطرقات الحضرية المهترئة وتهيئة الأرصفة والمسالك عبر كافة أحياء عنابة.',
+                axis_1_p2: 'تحديث شبكة الإنارة العمومية بتقنية LED الموفرة للطاقة لتعزيز الأمن الحضري ليلاً.',
+                axis_1_p3: 'تطهير وصيانة قنوات الصرف الصحي وتصريف مياه الأمطار لحماية الأحياء من الفيضانات.',
+                axis_1_p4: 'تنظيم مخطط المرور والنقل الحضري وتهيئة مواقف سيارات ذكية لفك الاختناق بوسط المدينة.',
+                axis_2_badge: 'المحور الثاني',
+                axis_2_title: 'الرقمنة وتحديث الإدارة الجوارية',
+                axis_2_p1: 'إطلاق منصة رقمية بلدية تفاعلية لاستخراج الوثائق ومتابعة الملفات الإدارية عن بُعد.',
+                axis_2_p2: 'إنشاء شباك موحد رقمي لتبسيط إجراءات رخص البناء، النشاطات التجارية، والملفات الاجتماعية.',
+                axis_2_p3: 'تفعيل نظام إلكتروني للتبليغ الفوري عن الأعطاب الحضرية ومتابعة معالجتها بالآجال المحددة.',
+                axis_2_p4: 'نشر الميزانية التشاركية وحصيلة المشاريع المنجزة دوريًا لتكريس الشفافية والرقابة الشعبية.',
+                axis_3_badge: 'المحور الثالث',
+                axis_3_title: 'دعم الشباب، التشغيل والاقتصاد المحلي',
+                axis_3_p1: 'تخصيص محلات وفضاءات نشاط منظمة للشباب حاملي المشاريع والحرفيين والمؤسسات الناشئة.',
+                axis_3_p2: 'تثمين الواجهة البحرية والكورنيش وشواطئ سرايدي وشطايبي لاستقطاب السياحة العائلية.',
+                axis_3_p3: 'مرافقة المستثمرين المحليين وتسهيل العقار الاقتصادي لخلق مناصب شغل دائمة لأبناء الولاية.',
+                axis_3_p4: 'تنظيم الأسواق الجوارية والقضاء على التجارة الفوضوية بما يحفظ كرامة التاجر والمستهلك.',
+                axis_4_badge: 'المحور الرابع',
+                axis_4_title: 'النظافة، البيئة والمساحات الخضراء',
+                axis_4_p1: 'تعزيز مخطط رفع النفايات المنزلية وتعميم الحاويات المطمورة ونقاط الفرز الانتقائي.',
+                axis_4_p2: 'إعادة تهيئة الحدائق العمومية والساحات العائلية وإطلاق حملات تشجير واسعة داخل الأحياء.',
+                axis_4_p3: 'حماية المحيط الغابي لجبل إيدوغ والمناطق الرطبة والشواطئ من التلوث والنفايات.',
+                axis_4_p4: 'إشراك الجمعيات البيئية ولجان الأحياء في مبادرات النظافة المستدامة والتوعية الحضرية.',
+                axis_5_badge: 'المحور الخامس',
+                axis_5_title: 'الثقافة، الرياضة والمرافق الشبانية',
+                axis_5_p1: 'إنجاز وتأهيل الملاعب الجوارية المعشوشبة وقاعات الرياضة في مختلف الأحياء السكنية.',
+                axis_5_p2: 'تقديم دعم مادي ولوجستي شفاف للنوادي الرياضية الهاوية والجمعيات الشبانية الفاعلة.',
+                axis_5_p3: 'تفعيل دور الشباب والمكتبات البلدية وتزويدها بفضاءات للمطالعة والابتكار التكنولوجي.',
+                axis_5_p4: 'إحياء التراث الثقافي والتاريخي لمدينة بونة وتنظيم تظاهرات فنية وعلمية للعائلات.',
+                axis_6_badge: 'المحور السادس',
+                axis_6_title: 'التكافل الاجتماعي والصحة الجوارية',
+                axis_6_p1: 'ضمان التدفئة، النقل المدرسي المنتظم، ووجبات الإطعام الصحي في كافة المدارس الابتدائية.',
+                axis_6_p2: 'تجهيز العيادات متعددة الخدمات وقاعات العلاج الجوارية بالأحياء ذات الكثافة السكانية.',
+                axis_6_p3: 'مرافقة العائلات المتعففة والأيتام وذوي الهمم وتهيئة الممرات الخاصة لتسهيل تنقلهم.',
+                axis_6_p4: 'تخصيص يوم استقبال أسبوعي مفتوح للاستماع المباشر لانشغالات المواطنين ومتابعتها.',
+                legal_tag: 'المرجعية الدستورية والقانونية للبرنامج',
+                legal_title: 'السند القانوني والمواد المرجعية الداعمة للبرنامج',
+                legal_subtitle: 'يستند كل محور في برنامجنا إلى الصلاحيات المخولة قانوناً للمنتخب المحلي وفق قوانين الجمهورية الجزائرية الديمقراطية الشعبية لضمان التزامات قابلة للتجسيد الميداني.',
+                legal_tab_all: 'جميع النصوص القانونية',
+                legal_tab_commune: 'قانون البلدية 11-10',
+                legal_tab_election: 'قانون الانتخابات 21-01',
+                legal_tab_part: 'الديمقراطية التشاركية',
+                rev_tag: 'الشفافية والتفاعل الشعبي المباشر',
+                rev_title: 'تعليقات وآراء الزوار وسكان عنابة حول البرنامج',
+                rev_subtitle: 'قيّم مدى اقتناعك بمحاور البرنامج الانتخابي (من 1 إلى 5 نجمات) وأضف تعليقك ليظهر مباشرة للزوار على الصفحة.',
+                rev_avg_label: 'مؤشر رضا الزوار',
+                rev_total_participants: 'تعليق ومشاركة',
+                rev_form_title: 'أضف تقييمك وتعليقك الآن',
+                rev_form_hint: 'اختر عدد النجوم الذي يعبر عن رأيك في البرنامج:',
+                rev_lbl_name: 'الاسم أو اللقب',
+                rev_lbl_area: 'الحي / البلدية',
+                rev_lbl_comment: 'تعليقك أو رأيك',
+                rev_btn_post: 'نشر التعليق والتقييم',
+                rev_feed_title: 'أحدث تعليقات ومشاركات الزوار',
+                rev_filter_all: 'جميع التقييمات',
+                communes_tag: 'تغطية شاملة عبر تراب الولاية',
+                communes_title: 'في خدمة جميع بلديات ولاية عنابة (12 بلدية)',
+                communes_desc: 'برنامجنا يراعي خصوصية كل بلدية، من الواجهة الساحلية إلى الأقطاب الحضرية والمناطق الفلاحية.',
+                form_tag: 'صوتك يصنع القرار',
+                form_title: 'شاركنا انشغالات حيك ومقترحاتك لعنابة',
+                form_desc: 'سجل مقترحك التنموي أو انشغالك المحلي ليتم إدراجه ضمن أولويات المتابعة الميدانية، أو أرسله مباشرة عبر الواتساب.',
+                lbl_name: 'الاسم الكامل (اختياري)',
+                lbl_commune: 'البلدية / الحي',
+                lbl_topic: 'مجال المقترح',
+                lbl_msg: 'تفاصيل المقترح أو الانشغال',
+                btn_submit: 'إرسال المقترح للمترشح',
+                btn_submit_wa: 'إرسال مباشر عبر واتساب',
+                ballot_guide_tag: 'بطاقة التذكير الانتخابي',
+                ballot_party: 'حزب جبهة التحرير الوطني',
+                ballot_wilaya: 'الدائرة الانتخابية: ولاية عنابة • المترشح لعبيدي لمين',
+                ballot_note: 'شارك رابط الموقع الرسمي للحملة مع أهلك وأصدقائك في عنابة للتعريف بالبرنامج الانتخابي، أو تواصل معنا مباشرة عبر الواتساب.',
+                btn_copy: 'نسخ رابط الحملة',
+                btn_whatsapp_direct: 'واتساب الحملة',
+                footer_candidate: 'لعبيدي لمين • حزب جبهة التحرير الوطني',
+                footer_party: 'حزب جبهة التحرير الوطني',
+                footer_desc: 'الحملة الانتخابية للمجالس الشعبية المحلية • ولاية عنابة. نحو تنمية محلية مستدامة وإدارة جوارية حديثة.',
+                footer_wa_label: 'الرقم المباشر للحملة (واتساب)',
+                footer_wa_note: 'يسعدنا استقبال رسائلكم واستفساراتكم عبر الواتساب طيلة أيام الأسبوع.',
+                footer_links_t: 'روابط سريعة',
+                footer_numbers_t: 'بيانات الترشح الرسمية',
+                footer_copy: '© 2026 الحملة الانتخابية للمترشح لعبيدي لمين - ولاية عنابة | جميع الحقوق محفوظة.'
+            },
+            fr: {
+                nav_candidate_name: 'Lamine Labidi',
+                nav_party: 'Front de Libération Nationale (FLN) • Annaba',
+                nav_title: 'Réforme Pivot • Annaba',
+                nav_home: 'Accueil',
+                nav_vision: 'Mot du Candidat',
+                nav_program: 'Programme Électoral',
+                nav_legal: 'Cadre Juridique',
+                nav_reviews: 'Commentaires Visiteurs',
+                nav_communes: 'Communes d’Annaba',
+                nav_contact: 'Vos Propositions',
+                badge_list_short: 'Liste : 1',
+                badge_cand_short: 'Candidat : 27',
+                badge_list: 'Liste N° : 1',
+                badge_cand: 'Candidat N° : 27',
+                hero_election_tag: 'Élections Locales • Commune & Wilaya d’Annaba (Bône)',
+                hero_party_full: 'Parti du Front de Libération Nationale (FLN) • Annaba',
+                hero_candidate_name: 'Candidat Lamine Labidi',
+                hero_headline_1: 'La Réforme Pivot',
+                hero_headline_2: 'Et le Développement Global d’Annaba',
+                hero_subtitle: 'Une vision de terrain intégrée fondée sur la proximité citoyenne, la modernisation des quartiers et infrastructures, la numérisation de l’administration, le soutien aux jeunes et la protection de l’environnement.',
+                label_list_num: 'Numéro de Liste',
+                label_cand_num: 'Numéro du Candidat',
+                cta_program: 'Découvrir le Programme Complet',
+                cta_reviews: 'Voir et Donner votre Avis ★',
+                live_badge: 'EN DIRECT • Campagne Électorale',
+                card_candidate_name: 'Lamine Labidi',
+                card_party: 'Front de Libération Nationale',
+                card_role: 'Candidat du FLN • Wilaya d’Annaba',
+                mini_list: 'Liste',
+                mini_cand: 'Candidat',
+                vision_tag: 'Mot du Candidat & Engagement',
+                vision_title: 'Ensemble pour une Annaba à la hauteur de son histoire',
+                vision_quote_1: '« Chers concitoyens de la wilaya d’Annaba, je suis votre frère Lamine Labidi. Ma candidature sur la liste du Front de Libération Nationale (Liste N° 1 - Candidat N° 27) naît d’une conviction profonde : l’action locale est le socle du développement concret au quotidien, loin des promesses creuses. »',
+                vision_quote_2: 'Nous nous engageons à porter fidèlement votre voix au sein de l’assemblée élue, à suivre avec rigueur les projets dans chaque quartier, à moderniser la commune par le numérique et à redonner à la Coquette tout son rayonnement économique et touristique.',
+                vision_sig_party: 'Lamine Labidi • Front de Libération Nationale',
+                vision_sig_sub: 'Liste N° 1 • Candidat N° 27 • Annaba',
+                vision_pledge: 'Engagement de Fidélité & Action de Terrain',
+                pillar_1_t: 'Écoute Permanente & Proximité',
+                pillar_1_d: 'Ouverture de canaux de dialogue directs avec les comités de quartiers et la société civile.',
+                pillar_2_t: 'Développement Équilibré des Quartiers',
+                pillar_2_d: 'Répartition équitable des projets entre le centre-ville, les nouveaux pôles urbains et les zones côtières.',
+                pillar_3_t: 'Numérisation du Service Public',
+                pillar_3_d: 'Simplification des démarches administratives et modernisation de la gestion communale.',
+                prog_tag: 'Axes de la Réforme Pivot • Commune & Wilaya d’Annaba',
+                prog_title: 'Programme Électoral & Plan de Développement Global',
+                prog_subtitle: 'Un plan d’action complet et opérationnel couvrant l’aménagement urbain, le numérique, l’économie, l’environnement, la jeunesse et la solidarité.',
+                tab_all: 'Tous les Axes (6)',
+                tab_urban: 'Aménagement & Infrastructures',
+                tab_digital: 'Numérique & Administration',
+                tab_economy: 'Jeunesse, Emploi & Tourisme',
+                tab_env: 'Propreté & Environnement',
+                tab_youth: 'Culture & Sports',
+                tab_social: 'Solidarité & Santé',
+                axis_1_badge: 'Axe 01',
+                axis_1_title: 'Aménagement des Quartiers & Infrastructures',
+                axis_1_p1: 'Réhabilitation des voiries urbaines, trottoirs et accès dans tous les quartiers d’Annaba.',
+                axis_1_p2: 'Modernisation de l’éclairage public en technologie LED basse consommation pour la sécurité nocturne.',
+                axis_1_p3: 'Curage et entretien des réseaux d’assainissement et d’évacuation des eaux pluviales.',
+                axis_1_p4: 'Réorganisation du plan de circulation et création de parkings intelligents au centre-ville.',
+                axis_2_badge: 'Axe 02',
+                axis_2_title: 'Numérisation & Administration de Proximité',
+                axis_2_p1: 'Lancement d’une plateforme communale interactive pour le retrait et suivi des dossiers à distance.',
+                axis_2_p2: 'Guichet unique numérique pour simplifier les permis de construire et dossiers sociaux.',
+                axis_2_p3: 'Système de signalement citoyen instantané des pannes urbaines avec suivi des délais.',
+                axis_2_p4: 'Publication périodique du budget participatif et de l’avancement des projets en toute transparence.',
+                axis_3_badge: 'Axe 03',
+                axis_3_title: 'Jeunesse, Emploi & Économie Locale',
+                axis_3_p1: 'Attribution de locaux et d’espaces d’activité organisés pour les jeunes entrepreneurs et artisans.',
+                axis_3_p2: 'Valorisation de la Corniche, de Seraïdi et de Chetaïbi pour un tourisme familial toute l’année.',
+                axis_3_p3: 'Accompagnement des investisseurs locaux et facilitation du foncier économique créateur d’emplois.',
+                axis_3_p4: 'Organisation des marchés de proximité et résorption du commerce informel dans la dignité.',
+                axis_4_badge: 'Axe 04',
+                axis_4_title: 'Propreté, Environnement & Espaces Verts',
+                axis_4_p1: 'Renforcement de la collecte des déchets, généralisation des conteneurs enterrés et du tri sélectif.',
+                axis_4_p2: 'Réhabilitation des jardins publics et campagnes de reboisement urbain dans chaque cité.',
+                axis_4_p3: 'Protection du massif forestier de l’Edough, des zones humides et des plages contre la pollution.',
+                axis_4_p4: 'Implication des associations écologiques et comités de quartiers dans l’écocitoyenneté.',
+                axis_5_badge: 'Axe 05',
+                axis_5_title: 'Culture, Sports & Infrastructures Jeunesse',
+                axis_5_p1: 'Réalisation et réhabilitation des stades de proximité et salles de sport dans les cités.',
+                axis_5_p2: 'Soutien financier et logistique transparent aux clubs sportifs amateurs et associations actives.',
+                axis_5_p3: 'Dynamisation des maisons de jeunes et bibliothèques communales avec espaces numériques.',
+                axis_5_p4: 'Valorisation du patrimoine historique de Bône et organisation d’événements culturels familiaux.',
+                axis_6_badge: 'Axe 06',
+                axis_6_title: 'Solidarité Sociale & Santé de Proximité',
+                axis_6_p1: 'Garantir le chauffage, le transport scolaire régulier et des cantines saines dans les écoles primaires.',
+                axis_6_p2: 'Équipement des polycliniques et salles de soins de proximité dans les quartiers peuplés.',
+                axis_6_p3: 'Accompagnement des familles vulnérables et aménagement des accès pour personnes à mobilité réduite.',
+                axis_6_p4: 'Journée hebdomadaire de réception ouverte pour l’écoute directe des citoyens.',
+                legal_tag: 'Référentiel Constitutionnel & Législatif',
+                legal_title: 'Cadre Juridique, Articles & Bases Légales',
+                legal_subtitle: 'Notre programme repose sur une maîtrise rigoureuse des prérogatives de l’élu local conformément aux lois de la République Algérienne Démocratique et Populaire.',
+                legal_tab_all: 'Tous les Textes',
+                legal_tab_commune: 'Loi Communale 11-10',
+                legal_tab_election: 'Code Électoral 21-01',
+                legal_tab_part: 'Démocratie Participative',
+                rev_tag: 'Transparence & Interaction Citoyenne',
+                rev_title: 'Commentaires et Avis des Visiteurs d’Annaba',
+                rev_subtitle: 'Évaluez votre degré d’adhésion au programme électoral (de 1 à 5 étoiles) et publiez votre commentaire en direct.',
+                rev_avg_label: 'Indice de Satisfaction',
+                rev_total_participants: 'avis & commentaires',
+                rev_form_title: 'Publiez votre évaluation et commentaire',
+                rev_form_hint: 'Sélectionnez le nombre d’étoiles correspondant à votre avis :',
+                rev_lbl_name: 'Nom ou Prénom',
+                rev_lbl_area: 'Quartier / Commune',
+                rev_lbl_comment: 'Votre commentaire',
+                rev_btn_post: 'Publier mon commentaire',
+                rev_feed_title: 'Derniers Commentaires des Visiteurs',
+                rev_filter_all: 'Toutes les notes',
+                communes_tag: 'Couverture Intégrale de la Wilaya',
+                communes_title: 'Au service des 12 communes de la Wilaya d’Annaba',
+                communes_desc: 'Notre programme intègre les spécificités de chaque commune, du littoral jusqu’aux pôles urbains et agricoles.',
+                form_tag: 'Votre Voix Compte',
+                form_title: 'Partagez les priorités de votre quartier',
+                form_desc: 'Transmettez vos propositions locales afin de les intégrer dans notre feuille de route de terrain, ou envoyez-les sur WhatsApp.',
+                lbl_name: 'Nom complet (Optionnel)',
+                lbl_commune: 'Commune / Quartier',
+                lbl_topic: 'Domaine de la proposition',
+                lbl_msg: 'Détails de votre proposition',
+                btn_submit: 'Envoyer la proposition',
+                btn_submit_wa: 'Envoyer via WhatsApp',
+                ballot_guide_tag: 'Mémo Électoral Officiel',
+                ballot_party: 'Front de Libération Nationale (FLN)',
+                ballot_wilaya: 'Circonscription Électorale : Wilaya d’Annaba • Candidat Lamine Labidi',
+                ballot_note: 'Partagez le lien officiel de la campagne avec vos proches à Annaba ou contactez-nous directement sur WhatsApp.',
+                btn_copy: 'Copier le lien',
+                btn_whatsapp_direct: 'WhatsApp Campagne',
+                footer_candidate: 'Lamine Labidi • Front de Libération Nationale',
+                footer_party: 'Front de Libération Nationale (FLN)',
+                footer_desc: 'Campagne des Élections Locales • Wilaya d’Annaba. Pour un développement local durable et une gestion de proximité moderne.',
+                footer_wa_label: 'Ligne Directe WhatsApp de la Campagne',
+                footer_wa_note: 'Nous sommes à votre écoute sur WhatsApp tout au long de la semaine.',
+                footer_links_t: 'Navigation Rapide',
+                footer_numbers_t: 'Repères Électoraux',
+                footer_copy: '© 2026 Campagne Électorale de Lamine Labidi - Wilaya d’Annaba | Tous droits réservés.'
+            }
+        };
+
+        // Render Legal Articles Cards
+        function renderLegalCards(filter = 'all') {
+            const container = document.getElementById('legalCardsGrid');
+            if (!container) return;
+
+            const filtered = filter === 'all'
+                ? legalArticlesData
+                : legalArticlesData.filter(item => item.category === filter);
+
+            container.innerHTML = filtered.map(item => `
+                <div class="glass-panel rounded-2xl p-4 sm:p-5 border border-amber-400/20 hover:border-amber-400/60 transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex flex-wrap items-center justify-between gap-1.5 mb-2.5">
+                            <span class="px-2.5 py-0.5 rounded-full bg-amber-500 text-slate-950 font-black text-[11px] shadow-sm">
+                                ${currentLang === 'ar' ? item.articleAr : item.articleFr}
+                            </span>
+                            <span class="text-[10px] font-bold text-emerald-300 flex items-center gap-1">
+                                <i class="fa-solid fa-scale-balanced"></i>
+                                <span>${currentLang === 'ar' ? 'السند القانوني' : 'Base Légale'}</span>
+                            </span>
+                        </div>
+                        <div class="px-2.5 py-2 rounded-xl bg-white/5 border border-white/10 mb-2.5">
+                            <span class="block text-[10px] text-amber-300 font-bold">${currentLang === 'ar' ? 'المرجع التشريعي:' : 'Texte de référence :'}</span>
+                            <span class="block text-[11px] font-extrabold text-white leading-snug">${currentLang === 'ar' ? item.lawAr : item.lawFr}</span>
+                        </div>
+                        <h3 class="text-sm font-black text-amber-200 mb-1.5 leading-snug">
+                            ${currentLang === 'ar' ? item.titleAr : item.titleFr}
+                        </h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            ${currentLang === 'ar' ? item.descAr : item.descFr}
+                        </p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterLegal(category) {
+            document.querySelectorAll('.legal-tab').forEach(btn => {
+                if (btn.getAttribute('data-legal') === category) {
+                    btn.classList.remove('bg-white/10', 'text-white');
+                    btn.classList.add('bg-amber-500', 'text-slate-950', 'shadow-lg');
+                } else {
+                    btn.classList.add('bg-white/10', 'text-white');
+                    btn.classList.remove('bg-amber-500', 'text-slate-950', 'shadow-lg');
+                }
+            });
+            renderLegalCards(category);
+        }
+
+        // Interactive Star Rating Controls
+        function updateStarVisuals(count) {
+            document.querySelectorAll('#starSelector .star-btn').forEach(btn => {
+                const val = parseInt(btn.getAttribute('data-val'), 10);
+                if (val <= count) {
+                    btn.classList.remove('text-slate-300');
+                    btn.classList.add('text-amber-400');
+                } else {
+                    btn.classList.remove('text-amber-400');
+                    btn.classList.add('text-slate-300');
+                }
+            });
+
+            const badge = document.getElementById('selectedRatingBadge');
+            const info = starRatingLabels[count] || starRatingLabels[5];
+            badge.className = `mt-2.5 inline-block px-3.5 py-1 rounded-full font-extrabold text-xs ${info.badgeClass}`;
+            badge.textContent = currentLang === 'ar' ? info.ar : info.fr;
+        }
+
+        function selectStarRating(val) {
+            selectedStars = val;
+            document.getElementById('selectedRatingValue').value = val;
+            updateStarVisuals(val);
+        }
+
+        function hoverStarRating(val) {
+            updateStarVisuals(val);
+        }
+
+        function resetStarHover() {
+            updateStarVisuals(selectedStars);
+        }
+
+        // Render Visitor Comments & Rating Breakdown
+        function renderCitizenReviews() {
+            const reviews = getStoredReviews();
+            const filterVal = document.getElementById('reviewFilterSelect')?.value || 'all';
+
+            const total = reviews.length;
+            const sum = reviews.reduce((acc, r) => acc + Number(r.stars || 5), 0);
+            const avg = total > 0 ? (sum / total).toFixed(1) : '5.0';
+
+            document.getElementById('avgRatingScore').textContent = avg;
+            document.getElementById('totalReviewsCount').textContent = total;
+
+            const barsContainer = document.getElementById('ratingBarsContainer');
+            barsContainer.innerHTML = [5, 4, 3, 2, 1].map(star => {
+                const count = reviews.filter(r => Number(r.stars) === star).length;
+                const pct = total > 0 ? Math.round((count / total) * 100) : 0;
+                const labelText = currentLang === 'ar'
+                    ? starRatingLabels[star].ar.split(':')[1].trim()
+                    : starRatingLabels[star].fr.split(':')[1].trim();
+                return `
+                    <div class="flex items-center gap-2.5">
+                        <span class="w-28 shrink-0 font-bold text-slate-200 flex items-center justify-between">
+                            <span>${star} ★</span>
+                            <span class="text-[11px] text-amber-300">${labelText}</span>
+                        </span>
+                        <div class="flex-1 h-2.5 rounded-full bg-white/10 overflow-hidden">
+                            <div class="h-full bg-amber-400 rounded-full transition-all duration-500" style="width: ${pct}%"></div>
+                        </div>
+                        <span class="w-8 text-end font-extrabold text-slate-300">${count}</span>
+                    </div>
+                `;
+            }).join('');
+
+            const visibleReviews = filterVal === 'all'
+                ? reviews
+                : reviews.filter(r => String(r.stars) === filterVal);
+
+            const feed = document.getElementById('citizenReviewsFeed');
+            feed.innerHTML = visibleReviews.map(rev => {
+                const sCount = Number(rev.stars || 5);
+                const labelInfo = starRatingLabels[sCount] || starRatingLabels[5];
+                const starsHtml = Array.from({ length: 5 }, (_, i) =>
+                    `<i class="fa-solid fa-star ${i < sCount ? 'text-amber-400' : 'text-slate-200'}"></i>`
+                ).join('');
+
+                const commentText = currentLang === 'ar'
+                    ? (rev.commentAr || rev.commentFr)
+                    : (rev.commentFr || rev.commentAr);
+                const dateText = currentLang === 'ar'
+                    ? (rev.dateAr || 'الآن')
+                    : (rev.dateFr || 'À l’instant');
+
+                return `
+                    <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-slate-200/80 hover:border-emerald-500/50 transition">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-emeraldDeep text-amber-300 font-black flex items-center justify-center text-sm shrink-0">
+                                    ${rev.name.charAt(0)}
+                                </div>
+                                <div>
+                                    <h4 class="font-extrabold text-sm text-slate-900">${rev.name}</h4>
+                                    <span class="text-xs text-slate-500 font-semibold flex items-center gap-1">
+                                        <i class="fa-solid fa-location-dot text-emerald-700"></i>
+                                        ${rev.area} • ${dateText}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-end gap-1">
+                                <div class="flex items-center gap-0.5 text-xs">${starsHtml}</div>
+                                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-extrabold ${labelInfo.badgeClass}">
+                                    ${currentLang === 'ar' ? labelInfo.ar : labelInfo.fr}
+                                </span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-700 leading-relaxed">${commentText}</p>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function handleStarReviewSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('reviewerName').value.trim();
+            const area = document.getElementById('reviewerArea').value.trim();
+            const comment = document.getElementById('reviewerComment').value.trim();
+            const stars = parseInt(document.getElementById('selectedRatingValue').value, 10) || 5;
+
+            if (!name || !area || !comment) return;
+
+            const reviews = getStoredReviews();
+            reviews.unshift({
+                id: Date.now(),
+                name,
+                area,
+                stars,
+                commentAr: comment,
+                commentFr: comment,
+                dateAr: 'الآن',
+                dateFr: 'À l’instant'
+            });
+
+            saveReviews(reviews);
+            renderCitizenReviews();
+
+            e.target.reset();
+            selectStarRating(5);
+
+            const toast = document.getElementById('reviewToast');
+            const toastText = document.getElementById('reviewToastText');
+            toastText.textContent = currentLang === 'ar'
+                ? 'تم نشر تعليقك وتقييمك بنجاح في قائمة الزوار!'
+                : 'Votre commentaire et votre note ont été publiés avec succès !';
+            toast.classList.remove('hidden');
+
+            setTimeout(() => toast.classList.add('hidden'), 5000);
+        }
+
+        // Render 12 Communes of Annaba
+        function renderCommunes() {
+            const container = document.getElementById('communesList');
+            container.innerHTML = communesData.map(c => `
+                <div class="flex items-center gap-2.5 p-3.5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-600 hover:bg-emerald-50/60 transition">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-700 shrink-0"></span>
+                    <span class="font-bold text-xs sm:text-sm text-slate-800">${currentLang === 'ar' ? c.ar : c.fr}</span>
+                </div>
+            `).join('');
+        }
+
+        // Toggle AR / FR Language
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'fr' : 'ar';
+            const htmlEl = document.documentElement;
+            htmlEl.setAttribute('lang', currentLang);
+            htmlEl.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+
+            document.getElementById('langBtnText').textContent = currentLang === 'ar' ? 'Français' : 'العربية';
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    el.textContent = translations[currentLang][key];
+                }
+            });
+
+            document.getElementById('citizenName').placeholder = currentLang === 'ar' ? 'مثال: محمد أمين' : 'Ex: Mohamed Amine';
+            document.getElementById('citizenMessage').placeholder = currentLang === 'ar' ? 'اكتب مقترحك هنا بكل وضوح...' : 'Décrivez votre proposition ici...';
+            document.getElementById('reviewerName').placeholder = currentLang === 'ar' ? 'مثال: كريم ب.' : 'Ex: Karim B.';
+            document.getElementById('reviewerArea').placeholder = currentLang === 'ar' ? 'مثال: سيدي عمار' : 'Ex: Sidi Amar';
+            document.getElementById('reviewerComment').placeholder = currentLang === 'ar' ? 'اكتب تعليقك بكل حرية حول البرنامج...' : 'Partagez votre avis sur le programme...';
+
+            renderCommunes();
+            renderLegalCards();
+            updateStarVisuals(selectedStars);
+            renderCitizenReviews();
+        }
+
+        // Mobile Navigation Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Filter Program Cards
+        function filterProgram(category) {
+            document.querySelectorAll('.prog-tab').forEach(btn => {
+                if (btn.getAttribute('data-filter') === category) {
+                    btn.classList.remove('bg-slate-100', 'text-slate-800');
+                    btn.classList.add('bg-amber-500', 'text-slate-950', 'shadow-lg');
+                } else {
+                    btn.classList.add('bg-slate-100', 'text-slate-800');
+                    btn.classList.remove('bg-amber-500', 'text-slate-950', 'shadow-lg');
+                }
+            });
+
+            document.querySelectorAll('.program-card').forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // Handle Citizen Proposal Submission
+        function handleProposalSubmit(e) {
+            e.preventDefault();
+            const feedback = document.getElementById('formFeedback');
+            const feedbackText = document.getElementById('formFeedbackText');
+            const commune = document.getElementById('citizenCommune').value;
+
+            feedbackText.textContent = currentLang === 'ar'
+                ? `تم استلام مقترحك الخاص ببلدية (${commune}) بنجاح! شكراً لمشاركتك الفعالة.`
+                : `Votre proposition pour (${commune}) a bien été enregistrée ! Merci pour votre engagement citoyen.`;
+
+            feedback.classList.remove('hidden');
+            e.target.reset();
+
+            setTimeout(() => {
+                feedback.classList.add('hidden');
+            }, 6000);
+        }
+
+        // Send Proposal Directly to Campaign WhatsApp (+213 540 16 44 99)
+        function sendProposalViaWhatsApp() {
+            const name = document.getElementById('citizenName').value.trim() || (currentLang === 'ar' ? 'مواطن من عنابة' : 'Citoyen d’Annaba');
+            const commune = document.getElementById('citizenCommune').value;
+            const topic = document.getElementById('citizenTopic').value;
+            const msg = document.getElementById('citizenMessage').value.trim() || (currentLang === 'ar' ? 'السلام عليكم، أود التواصل بخصوص البرنامج الانتخابي.' : 'Bonjour, je souhaite échanger concernant le programme électoral.');
+
+            const fullText = `الحملة الانتخابية للمترشح لعبيدي لمين - عنابة (اللائحة 1 - المترشح 27)\nالاسم: ${name}\nالبلدية: ${commune}\nالمجال: ${topic}\nالمقترح: ${msg}`;
+            const waUrl = `https://wa.me/213540164499?text=${encodeURIComponent(fullText)}`;
+            window.open(waUrl, '_blank', 'noopener');
+        }
+
+        // Copy Campaign URL using execCommand fallback
+        function copyCampaignLink() {
+            const urlInput = document.getElementById('hiddenUrlInput');
+            urlInput.value = window.location.href;
+            urlInput.classList.remove('sr-only');
+            urlInput.select();
+            try {
+                document.execCommand('copy');
+                const btnText = document.getElementById('copyBtnText');
+                btnText.textContent = currentLang === 'ar' ? 'تم نسخ الرابط ✓' : 'Lien copié ✓';
+                setTimeout(() => {
+                    btnText.textContent = translations[currentLang].btn_copy;
+                }, 2500);
+            } catch (err) {
+                console.error('Copy failed', err);
+            }
+            urlInput.classList.add('sr-only');
+        }
+
+        // Generate Fast & Vibrant Luxury Floating Golden Particles in Hero Interface
+        function initGoldenParticles() {
+            const container = document.getElementById('goldParticlesContainer');
+            if (!container) return;
+
+            const particleCount = window.innerWidth < 640 ? 34 : 58;
+            const fragment = document.createDocumentFragment();
+
+            for (let i = 0; i < particleCount; i++) {
+                const dot = document.createElement('span');
+                dot.className = 'gold-particle';
+
+                const size = (Math.random() * 5 + 3).toFixed(1);
+                const left = (Math.random() * 100).toFixed(2);
+                const top = (Math.random() * 95 + 5).toFixed(2);
+                const dur = (Math.random() * 2.2 + 2.2).toFixed(2);
+                const twinkle = (Math.random() * 0.9 + 0.7).toFixed(2);
+                const delay = (Math.random() * 3).toFixed(2);
+
+                dot.style.width = `${size}px`;
+                dot.style.height = `${size}px`;
+                dot.style.left = `${left}%`;
+                dot.style.top = `${top}%`;
+                dot.style.setProperty('--dur', `${dur}s`);
+                dot.style.setProperty('--twinkle', `${twinkle}s`);
+                dot.style.setProperty('--delay', `${delay}s`);
+
+                fragment.appendChild(dot);
+            }
+
+            container.appendChild(fragment);
+        }
+
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', () => {
+            renderCommunes();
+            renderLegalCards();
+            updateStarVisuals(5);
+            renderCitizenReviews();
+            initGoldenParticles();
+        });
+    </script>
+</body>
+</html>
